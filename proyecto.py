@@ -6,10 +6,26 @@ except ImportError:
 
 from tkinter import *
 
-#configuracion de la pantalla
-root = tk.Tk()
-root.config(width=800, height=600)
-root.title("Estructuras Algebraicas")
-root.mainloop()
+class UI(tk.Frame):
+    """Docstring."""
+
+    def __init__(self, parent=None):
+        tk.Frame.__init__(self, parent)
+        self.parent = parent
+        self.init_ui()
+
+    def init_ui(self):
+        """Aqui colocariamos los widgets."""
+        self.parent.title("Un titulo para la ventana")
+
+        etiqueta = tk.Label(self.parent, text="Ejemplo simple de Label")
+        etiqueta.pack()
+
+if __name__ == "__main__":
+    ROOT = tk.Tk()
+    ROOT.geometry("300x100")
+    APP = UI(parent=ROOT)
+    APP.mainloop()
+    ROOT.destroy()
 
 
