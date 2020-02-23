@@ -9,8 +9,6 @@ from tkinter import *
 import winsound
 import pygame
 
-winsound.PlaySound("march.mp3", winsound.SND_ASYNC | winsound.SND_ALIAS )
-
 
 def accionBoton():
     print("Botoncito dandola")
