@@ -56,7 +56,7 @@ instrucciones.place(x=500, y=140)
 instrucciones.insert(tk.END, '1)Seleccione el conjunto numerico\n\n2)Introduzca las ecuaciones\n\n3)Presione le boton de comprobar\n\n4)Las comprobaciones seran mostradas\n en el cuadro inferior')
 instrucciones.config(state=DISABLED)
 #label integrantes
-integrantes = tk.Label(ROOT, text="Sebastian Avendaño, V-26765567.\nSebastian Alvarez V-xxxxxxxx")
+integrantes = tk.Label(ROOT, text="Sebastian Avendaño, V-26.765.567.\nSebastian Alvarez V-26.900.740")
 integrantes.place(x=550, y=550)
 #label ecuacion 1
 label4 = tk.Label(ROOT, text="Ecuacion 1")
