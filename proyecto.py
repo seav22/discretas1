@@ -90,12 +90,17 @@ radio4.place(x=320, y=160)
 #separator
 separador1 = Separator(ROOT, orient=VERTICAL).place(x=480, y=80, height=500)
 separador2 = Separator(ROOT, orient=HORIZONTAL).place(x=45, y=340, width=390)
+#scrollbar
+scroll = Scrollbar(ROOT)
+scroll.place(x = 428, y = 385, height=200)
 #Text widget para resultado de comprobaciones
 resultado = tk.Text(ROOT, height=17, width=50)
-resultado.config(font=("Menlo", 9), fg="#FFFFFF", bg="#17212C", borderwidth=2)
+resultado.config(font=("Menlo", 9), fg="#FFFFFF", bg="#31475e", borderwidth=4, relief=SUNKEN)
 resultado.place(x=65, y=365)
-resultado.insert(tk.END, "Aqui va el resultado!!")
+resultado.insert(tk.END, "a")
 resultado.config(state=DISABLED)
+#test
+scroll.config(command=resultado.yview)
 
 '''</WIDGETS>'''
 
