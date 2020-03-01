@@ -619,6 +619,19 @@ def arranca():
             except NameError:
                 print("Expresión ingresada no es válida, intente nuevamente.")
 
+def bloquearVentanas():
+	textArea1.config(state=DISABLED)
+	textArea2.config(state=DISABLED)
+	mostrar.config(state=DISABLED)
+	boton1.config(state=DISABLED)
+	boton2.config(state=DISABLED)
+	radio1.config(state=DISABLED)
+	radio2.config(state=DISABLED)
+	radio3.config(state=DISABLED)
+	radio4.config(state=DISABLED)
+	messagebox.showinfo(message="Fin del programa.\n Si desea reutilizarlo debe reiniciar la aplicacion", title="Aviso")
+
+
 def arranca2():
 
 	#Trabajando con Enteros
@@ -648,6 +661,7 @@ def arranca2():
 					else:
 						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
 					mostrar.insert(tk.END, "Fin del programa.")
+					bloquearVentanas()
 					break
 				else:
 					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
