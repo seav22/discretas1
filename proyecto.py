@@ -11,113 +11,8 @@ from tkinter.ttk import *
 import cmath
 from math import sqrt
 
-def botonComprobar():
-    print("Esta es la ecuacion 1: " + textArea1.get())
-    print("Esta es la ecuacion 2: " + textArea2.get())
 
-'''<CONFIGURACION DEL WINDOWS>'''
-#Inicializo la pantalla y configuro propiedades como su tamaño y color de fondo.
-ROOT = tk.Tk()
-ROOT.title("Estructuras Algebraicas")
-ROOT.geometry("800x650")
-ROOT.resizable(width=False, height=False)
-ROOT.configure(background="#17212C")
-img = PhotoImage(file="vader.png")
-pygame.mixer.init()
-pygame.mixer.music.load("march.mp3")
-pygame.mixer.music.play()
-v = ""
-'''</CONFIGURACION DEL WINDOWS>'''
-
-'''<WIDGETS>'''
-#label principal
-label1 = tk.Label(ROOT, text="Estructuras Algebraicas", width=600, height=3)
-label1.config(font=("Menlo", 13, "bold"))
-label1.pack() 
-#logo vader
-logo1 = tk.Label(ROOT, image=img)
-logo1.place(x=20, y=8)
-logo2 = tk.Label(ROOT, image=img)
-logo2.place(x=730, y=8)
-#label datos
-label2 = tk.Label(ROOT, text="Introduzca aqui las expresiones a checkear")
-label2.config(font=("Menlo", 11, "bold"))
-label2.place(x=18, y=90)
-#label intrucciones
-label3 = tk.Label(ROOT, text="INTRUCCIONES:")
-label3.config(font=("Menlo", 11, "bold"))
-label3.place(x=575, y=90)
-#label cojunto numerico
-labeln = tk.Label(ROOT, text="Seleccione un conjunto numerico:")
-labeln.config(font=("Menlo", 9), bg="#17212C", fg="#FFFFFF")
-labeln.place(x=110, y=130)
-#Text widget para instrucciones
-instrucciones = tk.Text(ROOT, height=30, width=40)
-instrucciones.config(font=("Menlo", 9), fg="#FFFFFF", bg="#17212C", borderwidth=0)
-instrucciones.place(x=500, y=140)
-instrucciones.insert(tk.END, '1)Seleccione el conjunto numerico\n\n2)Introduzca las ecuaciones\n\n3)Presione el boton de comprobar\n\n4)Las comprobaciones seran mostradas\n en el cuadro inferior')
-instrucciones.config(state=DISABLED)
-#label integrantes
-integrantes = tk.Label(ROOT, text="Sebastian Avendaño, V-26.765.567.\nSebastian Alvarez V-26.900.740")
-integrantes.place(x=550, y=550)
-#label ecuacion 1
-label4 = tk.Label(ROOT, text="Ecuacion 1")
-label4.config(font=("Menlo", 9), bg="#17212C", fg="#FFFFFF")
-label4.place(x=63, y=215)
-#label ecuacion 2
-label5 = tk.Label(ROOT, text="Ecuacion 2")
-label5.config(font=("Menlo", 9), bg="#17212C", fg="#FFFFFF")
-label5.place(x=300, y=215)
-#text area ecuacion 1
-textArea1 = tk.Entry(ROOT)
-textArea1.place(x=40, y=240)
-textArea1.insert(0, "")
-#text area ecuacion 2
-textArea2 = tk.Entry(ROOT)
-textArea2.place(x=275, y=240)
-textArea2.insert(0, "")
-#widget boton
-boton = tk.Button(ROOT, text="Comprobar", command=botonComprobar)
-boton.config(font=("bold"))
-boton.place(x=170, y=280)
-#radio buttons
-radio1 = tk.Radiobutton(ROOT, text="NATURALES", variable = v, value=1)
-radio1.place(x=20, y=160)
-radio2 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=2)
-radio2.place(x=120, y=160)
-radio3 = tk.Radiobutton(ROOT, text="REALES", variable = v, value=3)
-radio3.place(x=220, y=160)
-radio4 = tk.Radiobutton(ROOT, text="COMPLEJOS", variable = v, value=4)
-radio4.place(x=320, y=160)
-radio3.select()
-#separator
-separador1 = Separator(ROOT, orient=VERTICAL).place(x=480, y=80, height=500)
-separador2 = Separator(ROOT, orient=HORIZONTAL).place(x=45, y=340, width=390)
-#scrollbar
-scroll = Scrollbar(ROOT)
-scroll.place(x = 428, y = 385, height=200)
-#Text widget para resultado de comprobaciones
-resultado = tk.Text(ROOT, height=17, width=50)
-resultado.config(font=("Menlo", 9), fg="#FFFFFF", bg="#31475e", borderwidth=4, relief=SUNKEN)
-resultado.place(x=65, y=365)
-resultado.insert(tk.END, "a")
-resultado.config(state=DISABLED)
-#configurar scroll
-scroll.config(command=resultado.yview)
-popup = Toplevel(ROOT)
-popup.title("prueba")
-popup.config(width=120, height=120)
-msg = Message(popup, text="")
-msg.place(x=100, y=100)
-button123 = Button(popup, text="Cerrar", command=popup.destroy)
-button123.pack
-
-'''</WIDGETS>'''
-
-#Main loop
-ROOT.mainloop()
-
-############################################################################################################################################
+'''<CODIGO>'''
 
 a = 10
 b = 4
@@ -125,89 +20,6 @@ c = 7
 mon = a+b
 mon1 = a*b
 m = 0
-
-
-# Funciones que permiten el correcto desarrollo del programa
-
-
-def select():
-
-	while True:
-		print("\n¿Desea conocer si se cumple Monoide Asociativo?\nIngrese 1 de ser así.\nIngrese 2 para salir.")
-
-		try:
-			seleccion = int(input("Ingrese la opción: "))
-
-			if seleccion == 1:
-				return seleccion
-				break
-			elif seleccion == 2:
-				return seleccion
-				break
-			else:
-				print("Ingrese un número que sea 1 ó 2, tal como se indicó anteriormente. Intente nuevamente")
-
-		except ValueError:
-			print("\nIngrese una opción válida. La misma debe ser numérica, 1 ó 2. Intente nuevamente.")
-
-#Selección para Grupo
-def select2(): 
-
-	while True:
-		print("\n¿Desea conocer si su expresión pertenece a un Grupo?\nIngrese 1 si la respuesta es afirmativa. \nIngrese 2 para salir")
-
-		try:
-			seleccion = int(input("Ingrese la opción deseada: "))
-			if seleccion == 1:
-				return seleccion
-				break
-			elif seleccion == 2:
-				return seleccion
-				break
-			else:
-				print("Ingrese un número válido, es decir, 1 ó 2. Intentelo nuevamente.")
-
-		except ValueError:
-			print("\nIngrese una opción que sea válida, recuerde que la misma debe ser numérica, 1 ó 2 respectivamente.")
-
-#Selección para grupo Abeliano
-def select3():
-
-	while True:
-		print("\n¿Desea conocer si su expresión pertenece a un Grupo Abeliano?\nIngrese 1 si es así. \nIngrese 2 para salir y finalizar el programa")
-
-		try:
-			seleccion = int(input("Ingrese la opción deseada: "))
-			if seleccion == 1:
-				return seleccion
-				break
-			elif seleccion == 2:
-				return seleccion
-				break
-			else:
-				print("Ingrese un número válido, es decir, 1 ó 2. Intentelo nuevamente.")
-
-		except ValueError:
-			print("\nIngrese una opción que sea válida, recuerde que la misma debe ser numérica, 1 ó 2 respectivamente.")
-
-#Selección para Anillo
-def select4():
-
-	while True:
-
-		print("\n¿Deseea conocer si su expresión cumple con los parámetros de ANILLO?\nIngrese 1 si es así.\nIngrese 2 para salir y finalizar el programa")
-
-		try:
-			seleccion = int(input("Ingresa la opción deseada: "))
-			if seleccion == 1:
-				return seleccion
-				break
-			elif seleccion == 2:
-				return seleccion
-				break
-
-		except ValueError:
-			print("\nIngrese una opción que sea válida, recuerde que la misma debe ser numérica, 1 ó 2 respectivamente.")
 
 #Propiedades
 def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo (a * b) * c = a * (b * c)  [(a * b)]
@@ -608,242 +420,339 @@ def reales(e):
 		print("Cumple con la Ley de Composición Interna. Es un número real.")
 		return 1
 
-#Inicio del programa.
-print("\nBienvenido a Ley de Composición Interna.\nPrograma elaborado por Sebastián Álvarez y Sebastián Avendaño.\nEstructuras Discretas I. UJAP.")
-while True:
-	try:
-		print("\nEscoja el conjunto numérico con el que desea trabajar:\nTipee 1 para entero.\nTipee 2 para natural\nTipee 3 para real.\nTipee 4 para complejo")
-		opcion = int(input("\nIngrese el número correspondiente: "))
-		if opcion >= 1 and opcion <= 4:
-			##print("San se acabó") En caso de que se cumpla la condición dada, se acaba al ciclo y se procede con la comprobación de la operación
-			break
-		else:
-			print("¡Debe ser un valor entre 1 y 4! Intente nuevamente.")
-	except ValueError:
-		print("Ingrese un valor válido. Recuerde que debe ser numérico, del 1 al 4 respectivamente.\nIntente nuevamente.")
-		#Manejo de excepciones para evitar que el usuario ingrese un valor diferente a uno numérico.
-##print("Fuera del ciclo ya.")
+def arranca():
+    
+    opcion = int(v.get())
 
-#Entero
-if opcion == 1:
+    #Entero
+    if opcion == 1:
 
-	while True:
-		print("\nHa escogido trabajar con el conjunto de los números enteros. Por favor, ingrese la expresión matemática a comprobar:")
+        while True:
+            #print("\nHa escogido trabajar con el conjunto de los números enteros. Por favor, ingrese la expresión matemática a comprobar:")
 
-		try:
-			expresion = input("Ingrese la expresión: ")
-			resultado = eval(expresion)
+            try:
+                expresion = str(textArea1.get())
+                resultado = eval(expresion)
 
-			if (isinstance(resultado,int)):
-				print("La expresión ingresada (",expresion,") cumple la Ley de Composición Interna. \nSu resultado es: ",resultado,"")
+                if (isinstance(resultado,int)):
+                    mostrar.insert(tk.END, "La expresión ingresada (",expresion,") cumple la Ley de Composición Interna. \nSu resultado es: ",resultado,"")
 
+                    
+                    monoideA(expresion)
+                    monoideB(expresion)
+
+                    
+                    if (neutro(expresion) == 1):
+                        if (inverso(expresion) == 1):
+                            conmutatividad(expresion)
+                            expr2 = segunda_expr()
+                            print("La segunda expresión es: ",expr2)
+                            resultado2 = eval(expr2)
+                            if (isinstance(resultado2, int)):
+                                print("La segunda expresión cumple con la Ley de Composición Interna")
+                                print("Comprobando MONOIDE ASOCIATIVO. . .")
+
+                                
+                                if (monoideC(expr2) == 1):
+                                    m+=1
+                                if (monoideD(expr2) == 1):
+                                    m+=1	
+                                if (propiedadDistributiva(expresion, expr2) == 1):
+                                    m+=1
+                                if (m == 2):
+                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+                                if (m ==3 ):
+                                    print("\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+                                else:
+                                    print("\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+                                print("Fin del programa.")
+                                break #Fin del ciclo
+                
+                            else:
+                                print("No se cumple el Elemento Inverso. No pertenece. Fin del programa.")
+                                break
+                        else:
+                            print("No se cumple el Elemento Neutro. No pertenece. Fin del programa")
+                            break
+                        
+                else:
+                    print("La expresión ingresada (",expresion,") NO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
+                    break
+            except NameError:
+                print("Expresión ingresada no es válida. Por favor, intente nuevamente.")
 				
-				monoideA(expresion)
-				monoideB(expresion)
 
-				
-				if (neutro(expresion) == 1):
-					if (inverso(expresion) == 1):
-						conmutatividad(expresion)
-						expr2 = segunda_expr()
-						print("La segunda expresión es: ",expr2)
-						resultado2 = eval(expr2)
-						if (isinstance(resultado2, int)):
-							print("La segunda expresión cumple con la Ley de Composición Interna")
-							print("Comprobando MONOIDE ASOCIATIVO. . .")
+    #Natural
+    elif opcion == 2:
 
-							
-							if (monoideC(expr2) == 1):
-								m+=1
-							if (monoideD(expr2) == 1):
-								m+=1	
-							if (propiedadDistributiva(expresion, expr2) == 1):
-								m+=1
-							if (m == 2):
-								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-							if (m ==3 ):
-								print("\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
-							else:
-								print("\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-							print("Fin del programa.")
-							break #Fin del ciclo
-			
-						else:
-							print("No se cumple el Elemento Inverso. No pertenece. Fin del programa.")
-							break
-					else:
-						print("No se cumple el Elemento Neutro. No pertenece. Fin del programa")
-						break
-					
-			else:
-				print("La expresión ingresada (",expresion,") NO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
-				break
-		except NameError:
-			print("Expresión ingresada no es válida. Por favor, intente nuevamente.")
+        while True:
+            print("\nHa escogido trabajar con el conjunto de los números naturales. Por favor, ingrese la expresión matemática a comprobar:")
 
-#Natural
-elif opcion == 2:
+            try:
+                expresion = input("Ingrese la expresión: ")
+                resultado = eval(expresion)
 
-	while True:
-		print("\nHa escogido trabajar con el conjunto de los números naturales. Por favor, ingrese la expresión matemática a comprobar:")
+                if (resultado >= 0 and isinstance(resultado,int)):
+                    print("La expresión (",expresion,") cumple con la Ley de Composición Interna.")
+                    print("Resultado: ",resultado)
+                    monoideA(expresion)
+                    monoideB(expresion)
 
-		try:
-			expresion = input("Ingrese la expresión: ")
-			resultado = eval(expresion)
+                    if (neutro(expresion) == 1):
+                        if (inverso(expresion) == 1):
+                            print("\nPertenece a grupo.")
 
-			if (resultado >= 0 and isinstance(resultado,int)):
-				print("La expresión (",expresion,") cumple con la Ley de Composición Interna.")
-				print("Resultado: ",resultado)
-				monoideA(expresion)
-				monoideB(expresion)
+                
+                            conmutatividad(expresion)
 
-				if (neutro(expresion) == 1):
-					if (inverso(expresion) == 1):
-						print("\nPertenece a grupo.")
+                            expr2 = segunda_expr()
+                            print("La segunda expresión es: ",expr2)
+                            resultado2 = eval(expr2)
+                            if (resultado2 >= 0 and isinstance(resultado2, int)):
+                                print("La segunda expresión cumple con la Ley de Composición Interna")
+                                if (monoideC(expr2) == 1):
+                                    m+=1
+                                if (monoideD(expr2) == 1):
+                                    m+=1	
+                                if (propiedadDistributiva(expresion, expr2) == 1):
+                                    m+=1
+                                if (m == 2):
+                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+                                if (m == 3):
+                                    print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+                                else:
+                                    print("NO hay Cuerpo. No se cumple Grupo Abeliano en conjunto con Propiedad Distributiva")
+                                print("Fin del programa.")
+                                break
 
-			
-						conmutatividad(expresion)
+                            else:
+                                print("La segunda expresión NO cumple con la Ley de Composición Interna")
+                        else:
+                            print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                    else:
+                        print("No se cumple Elemento Neutro. No pertenece. Fin del programa.")
+                        break
+                else:
+                    print("La expresión (",expresion,") no cumple con la Ley de Composición Interna.")
+                    print("Resultado: ",resultado)
+                    print("Fin del programa.")
+                    break
+            except NameError:
+                print("Expresión ingresada no es válida, intente nuevamente.")
 
-						expr2 = segunda_expr()
-						print("La segunda expresión es: ",expr2)
-						resultado2 = eval(expr2)
-						if (resultado2 >= 0 and isinstance(resultado2, int)):
-							print("La segunda expresión cumple con la Ley de Composición Interna")
-							if (monoideC(expr2) == 1):
-								m+=1
-							if (monoideD(expr2) == 1):
-								m+=1	
-							if (propiedadDistributiva(expresion, expr2) == 1):
-								m+=1
-							if (m == 2):
-								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-							if (m == 3):
-								print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-							else:
-								print("NO hay Cuerpo. No se cumple Grupo Abeliano en conjunto con Propiedad Distributiva")
-							print("Fin del programa.")
-							break
+    #Real
+    elif opcion == 3:
 
-						else:
-							print("La segunda expresión NO cumple con la Ley de Composición Interna")
-					else:
-						print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
-				else:
-					print("No se cumple Elemento Neutro. No pertenece. Fin del programa.")
-					break
-			else:
-				print("La expresión (",expresion,") no cumple con la Ley de Composición Interna.")
-				print("Resultado: ",resultado)
-				print("Fin del programa.")
-				break
-		except NameError:
-			print("Expresión ingresada no es válida, intente nuevamente.")
+        while True:
+            print("\nHa escogido trabajar con el conjunto de los números reales. Por favor, ingrese la expresión matemática a comprobar: ")
 
-#Real
-elif opcion == 3:
+            try:
+                expresion = input("Ingrese la expresión: ")
+                resultado = eval(expresion)
+                if (isinstance(resultado,complex)):
+                    print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
+                    print("Resultado: ",resultado)
+                    break
+                else:
+                    print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
+                    print("Resultado: ",resultado)
+                    monoideA(expresion)
+                    monoideB(expresion)
+                    if (neutro(expresion) == 1):
+                        if (inverso(expresion) == 1):
+                            conmutatividad(expresion)
 
-	while True:
-		print("\nHa escogido trabajar con el conjunto de los números reales. Por favor, ingrese la expresión matemática a comprobar: ")
+                            expr2 = segunda_expr()
+                            print("La segunda expresión es: ",expr2)
+                            resultado2 = eval(expr2)
+                            print("Resultado numérico de la segunda expresión: ",resultado2)
+                            print("Comprobando si cumple Ley de Composición Interna. . .")
 
-		try:
-			expresion = input("Ingrese la expresión: ")
-			resultado = eval(expresion)
-			if (isinstance(resultado,complex)):
-				print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
-				print("Resultado: ",resultado)
-				break
-			else:
-				print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
-				print("Resultado: ",resultado)
-				monoideA(expresion)
-				monoideB(expresion)
-				if (neutro(expresion) == 1):
-					if (inverso(expresion) == 1):
-						conmutatividad(expresion)
+                            if (reales(expr2) == 1):
+                                if (monoideC(expr2) == 1):
+                                    m+=1
+                                if (monoideD(expr2)	== 1):
+                                    m+=1
+                                if (propiedadDistributiva(expresion, expr2) ==1):
+                                    m+=1
+                                if (m == 2):
+                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+                                if (m == 3):
+                                    print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+                                else:
+                                    print("\nNO hay Cuerpo. NO se cumple tanto grupo Abeliano como Propiedad Distributiva")
+                                print("\nFin del programa.")
+                                break	
+                            else:
+                                break
+                        else:
+                            print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            break
+                    else:
+                        print("No se cumple Elemento Neutro. No pertenece. Fin del programa")
+                        break
+            except NameError:
+                print("Expresión ingresada no es válida, intente nuevamente.")
 
-						expr2 = segunda_expr()
-						print("La segunda expresión es: ",expr2)
-						resultado2 = eval(expr2)
-						print("Resultado numérico de la segunda expresión: ",resultado2)
-						print("Comprobando si cumple Ley de Composición Interna. . .")
+    #Complejos
+    elif opcion == 4:
 
-						if (reales(expr2) == 1):
-							if (monoideC(expr2) == 1):
-								m+=1
-							if (monoideD(expr2)	== 1):
-								m+=1
-							if (propiedadDistributiva(expresion, expr2) ==1):
-								m+=1
-							if (m == 2):
-								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-							if (m == 3):
-								print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-							else:
-								print("\nNO hay Cuerpo. NO se cumple tanto grupo Abeliano como Propiedad Distributiva")
-							print("\nFin del programa.")
-							break	
-						else:
-							break
-					else:
-						print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
-						break
-				else:
-					print("No se cumple Elemento Neutro. No pertenece. Fin del programa")
-					break
-		except NameError:
-			print("Expresión ingresada no es válida, intente nuevamente.")
+        while True:
+            print("\nHa escogido trabajar con el conunto de los números complejos. Por favor, ingrese la expresión matemática a comprobar")
 
-#Complejos
-elif opcion == 4:
+            try:
+                expresion = input("Ingrese la expresión: ")
+                resultado = eval(expresion)
+                if (isinstance(resultado, complex)):
+                    print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
+                    print("Resultado: ",resultado)
 
-	while True:
-		print("\nHa escogido trabajar con el conunto de los números complejos. Por favor, ingrese la expresión matemática a comprobar")
+                    monoideA(expresion)
+                    monoideB(expresion)
 
-		try:
-			expresion = input("Ingrese la expresión: ")
-			resultado = eval(expresion)
-			if (isinstance(resultado, complex)):
-				print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
-				print("Resultado: ",resultado)
+                    if (neutro(expresion) == 1):
+                        if (inverso(expresion) == 1):
+                            conmutatividad(expresion)
+                            expr2 = segunda_expr()
+                            print("La segunda expresión es: ",expr2)
+                            resultado2 = eval(expr2)
+                            if (isinstance(resultado2, complex)):
+                                print("La segunda expresión cumple con la Ley de Composición Interna")
+                                if (monoideC(expr2) == 1):
+                                    m+=1
+                                if (monoideD(expr2) == 1):
+                                    m+=1	
+                                if (propiedadDistributiva(expresion, expr2) == 1):
+                                    m+=1
+                                if (m == 2):
+                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+                                if (m == 3):
+                                    print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
+                                else:
+                                    print("\nNO hay Cuerpo. NO se cumple el Grupo Abeliano con la Propiedad Distributiva")
+                                print("\nFin del programa.")
+                                break
+                        else:
+                            print("\nNo se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            break
+                    else:
+                        print("\nNo se cumple Elemento Neutro. No pertenece. Fin del programa.")
+                        break
+                else:
+                    print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
+                    print("Resultado: ",resultado)
+                    print("Fin del programa.")
+                    break
+            except NameError:
+                print("Expresión ingresada no es válida, intente nuevamente.")
 
-				monoideA(expresion)
-				monoideB(expresion)
 
-				if (neutro(expresion) == 1):
-					if (inverso(expresion) == 1):
-						conmutatividad(expresion)
-						expr2 = segunda_expr()
-						print("La segunda expresión es: ",expr2)
-						resultado2 = eval(expr2)
-						if (isinstance(resultado2, complex)):
-							print("La segunda expresión cumple con la Ley de Composición Interna")
-							if (monoideC(expr2) == 1):
-								m+=1
-							if (monoideD(expr2) == 1):
-								m+=1	
-							if (propiedadDistributiva(expresion, expr2) == 1):
-								m+=1
-							if (m == 2):
-								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-							if (m == 3):
-								print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
-							else:
-								print("\nNO hay Cuerpo. NO se cumple el Grupo Abeliano con la Propiedad Distributiva")
-							print("\nFin del programa.")
-							break
-					else:
-						print("\nNo se cumple Elemento Inverso. No pertenece. Fin del programa.")
-						break
-				else:
-					print("\nNo se cumple Elemento Neutro. No pertenece. Fin del programa.")
-					break
-			else:
-				print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
-				print("Resultado: ",resultado)
-				print("Fin del programa.")
-				break
-		except NameError:
-			print("Expresión ingresada no es válida, intente nuevamente.")
+'''</CODIGO>'''
+
+
+'''<CONFIGURACION DEL WINDOWS>'''
+#Inicializo la pantalla y configuro propiedades como su tamaño y color de fondo.
+ROOT = tk.Tk()
+ROOT.title("Estructuras Algebraicas")
+ROOT.geometry("800x650")
+ROOT.resizable(width=False, height=False)
+ROOT.configure(background="#17212C")
+img = PhotoImage(file="vader.png")
+pygame.mixer.init()
+pygame.mixer.music.load("march.mp3")
+pygame.mixer.music.play()
+v = tk.StringVar()
+'''</CONFIGURACION DEL WINDOWS>'''
+
+'''<WIDGETS>'''
+#label principal
+label1 = tk.Label(ROOT, text="Estructuras Algebraicas", width=600, height=3)
+label1.config(font=("Menlo", 13, "bold"))
+label1.pack() 
+#logo vader
+logo1 = tk.Label(ROOT, image=img)
+logo1.place(x=20, y=8)
+logo2 = tk.Label(ROOT, image=img)
+logo2.place(x=730, y=8)
+#label datos
+label2 = tk.Label(ROOT, text="Introduzca aqui las expresiones a checkear")
+label2.config(font=("Menlo", 11, "bold"))
+label2.place(x=18, y=90)
+#label intrucciones
+label3 = tk.Label(ROOT, text="INTRUCCIONES:")
+label3.config(font=("Menlo", 11, "bold"))
+label3.place(x=575, y=90)
+#label cojunto numerico
+labeln = tk.Label(ROOT, text="Seleccione un conjunto numerico:")
+labeln.config(font=("Menlo", 9), bg="#17212C", fg="#FFFFFF")
+labeln.place(x=110, y=130)
+#Text widget para instrucciones
+instrucciones = tk.Text(ROOT, height=30, width=40)
+instrucciones.config(font=("Menlo", 9), fg="#FFFFFF", bg="#17212C", borderwidth=0)
+instrucciones.place(x=500, y=140)
+instrucciones.insert(tk.END, '1)Seleccione el conjunto numerico\n\n2)Introduzca las ecuaciones\n\n3)Presione el boton de comprobar\n\n4)Las comprobaciones seran mostradas\n en el cuadro inferior')
+instrucciones.config(state=DISABLED)
+#label integrantes
+integrantes = tk.Label(ROOT, text="Sebastian Avendaño, V-26.765.567.\nSebastian Alvarez V-26.900.740")
+integrantes.place(x=550, y=550)
+#label ecuacion 1
+label4 = tk.Label(ROOT, text="Ecuacion 1")
+label4.config(font=("Menlo", 9), bg="#17212C", fg="#FFFFFF")
+label4.place(x=63, y=215)
+#label ecuacion 2
+label5 = tk.Label(ROOT, text="Ecuacion 2")
+label5.config(font=("Menlo", 9), bg="#17212C", fg="#FFFFFF")
+label5.place(x=300, y=215)
+label5.config(state=DISABLED)
+#text area ecuacion 1
+textArea1 = tk.Entry(ROOT)
+textArea1.place(x=40, y=240)
+textArea1.insert(0, "")
+#text area ecuacion 2
+textArea2 = tk.Entry(ROOT)
+textArea2.place(x=275, y=240)
+textArea2.insert(0, "")
+textArea2.config(state=DISABLED)
+#widget boton
+boton = tk.Button(ROOT, text="Comprobar", command=arranca)
+boton.config(font=("bold"))
+boton.place(x=170, y=280)
+#radio buttons
+radio1 = tk.Radiobutton(ROOT, text="NATURALES", variable = v, value=1)
+radio1.place(x=20, y=160)
+radio2 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=2)
+radio2.place(x=120, y=160)
+radio3 = tk.Radiobutton(ROOT, text="REALES", variable = v, value=3)
+radio3.place(x=220, y=160)
+radio4 = tk.Radiobutton(ROOT, text="COMPLEJOS", variable = v, value=4)
+radio4.place(x=320, y=160)
+radio3.select()
+#separator
+separador1 = Separator(ROOT, orient=VERTICAL).place(x=480, y=80, height=500)
+separador2 = Separator(ROOT, orient=HORIZONTAL).place(x=45, y=340, width=390)
+#scrollbar
+scroll = Scrollbar(ROOT)
+scroll.place(x = 428, y = 385, height=200)
+#Text widget para resultado de comprobaciones
+mostrar = tk.Text(ROOT, height=17, width=50)
+mostrar.config(font=("Menlo", 9), fg="#FFFFFF", bg="#31475e", borderwidth=4, relief=SUNKEN)
+mostrar.place(x=65, y=365)
+mostrar.insert(tk.END, "a")
+mostrar.config(state=DISABLED)
+#configurar scroll
+scroll.config(command=mostrar.yview)
+popup = Toplevel(ROOT)
+popup.title("prueba")
+popup.config(width=120, height=120)
+msg = Message(popup, text="")
+msg.place(x=100, y=100)
+button123 = Button(popup, text="Cerrar", command=popup.destroy)
+button123.pack
+
+'''</WIDGETS>'''
+
+#Main loop
+ROOT.mainloop()
 
 
 
