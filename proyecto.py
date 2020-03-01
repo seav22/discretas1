@@ -34,7 +34,7 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	asoR4 = asoR3.replace("a","b") #Sustituyendo a de la expresión ingresada por b
 	
 	#Aplicando segundo reemplazo.
-	result = e.replace("
+	result = e.replace("b", "c")
 	result2 = result.replace("a", asoR ) #2*(2*a - b) - c
 	resultado = eval(result2)
 
@@ -428,15 +428,13 @@ def arranca():
     if opcion == 1:
 
         while True:
-            #print("\nHa escogido trabajar con el conjunto de los números enteros. Por favor, ingrese la expresión matemática a comprobar:")
 
             try:
                 expresion = str(textArea1.get())
                 resultado = eval(expresion)
 
                 if (isinstance(resultado,int)):
-                    mostrar.insert(tk.END, "La expresión ingresada (",expresion,") cumple la Ley de Composición Interna. \nSu resultado es: ",resultado,"")
-
+                    mostrar.insert(tk.END, "La expresión ingresada cumple la Ley de Composición Interna.")
                     
                     monoideA(expresion)
                     monoideB(expresion)
@@ -718,9 +716,9 @@ boton = tk.Button(ROOT, text="Comprobar", command=arranca)
 boton.config(font=("bold"))
 boton.place(x=170, y=280)
 #radio buttons
-radio1 = tk.Radiobutton(ROOT, text="NATURALES", variable = v, value=1)
+radio1 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=1)
 radio1.place(x=20, y=160)
-radio2 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=2)
+radio2 = tk.Radiobutton(ROOT, text="NATURALES", variable = v, value=2)
 radio2.place(x=120, y=160)
 radio3 = tk.Radiobutton(ROOT, text="REALES", variable = v, value=3)
 radio3.place(x=220, y=160)
@@ -737,8 +735,7 @@ scroll.place(x = 428, y = 385, height=200)
 mostrar = tk.Text(ROOT, height=17, width=50)
 mostrar.config(font=("Menlo", 9), fg="#FFFFFF", bg="#31475e", borderwidth=4, relief=SUNKEN)
 mostrar.place(x=65, y=365)
-mostrar.insert(tk.END, "a")
-mostrar.config(state=DISABLED)
+#mostrar.config(state=DISABLED)
 #configurar scroll
 scroll.config(command=mostrar.yview)
 popup = Toplevel(ROOT)
