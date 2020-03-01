@@ -53,7 +53,7 @@ labeln.place(x=110, y=130)
 instrucciones = tk.Text(ROOT, height=30, width=40)
 instrucciones.config(font=("Menlo", 9), fg="#FFFFFF", bg="#17212C", borderwidth=0)
 instrucciones.place(x=500, y=140)
-instrucciones.insert(tk.END, '1)Seleccione el conjunto numerico\n\n2)Introduzca las ecuaciones\n\n3)Presione le boton de comprobar\n\n4)Las comprobaciones seran mostradas\n en el cuadro inferior')
+instrucciones.insert(tk.END, '1)Seleccione el conjunto numerico\n\n2)Introduzca las ecuaciones\n\n3)Presione el boton de comprobar\n\n4)Las comprobaciones seran mostradas\n en el cuadro inferior')
 instrucciones.config(state=DISABLED)
 #label integrantes
 integrantes = tk.Label(ROOT, text="Sebastian Avendaño, V-26.765.567.\nSebastian Alvarez V-26.900.740")
@@ -79,14 +79,15 @@ boton = tk.Button(ROOT, text="Comprobar", command=botonComprobar)
 boton.config(font=("bold"))
 boton.place(x=170, y=280)
 #radio buttons
-radio1 = tk.Radiobutton(ROOT, text="NATURALES", variable=v, value=1)
+radio1 = tk.Radiobutton(ROOT, text="NATURALES", variable = v, value=1)
 radio1.place(x=20, y=160)
-radio2 = tk.Radiobutton(ROOT, text="ENTEROS", variable=v, value=2)
+radio2 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=2)
 radio2.place(x=120, y=160)
-radio3 = tk.Radiobutton(ROOT, text="REALES", variable=v, value=3)
+radio3 = tk.Radiobutton(ROOT, text="REALES", variable = v, value=3)
 radio3.place(x=220, y=160)
-radio4 = tk.Radiobutton(ROOT, text="COMPLEJOS", variable=v, value=4)
+radio4 = tk.Radiobutton(ROOT, text="COMPLEJOS", variable = v, value=4)
 radio4.place(x=320, y=160)
+radio3.select()
 #separator
 separador1 = Separator(ROOT, orient=VERTICAL).place(x=480, y=80, height=500)
 separador2 = Separator(ROOT, orient=HORIZONTAL).place(x=45, y=340, width=390)
@@ -99,14 +100,13 @@ resultado.config(font=("Menlo", 9), fg="#FFFFFF", bg="#31475e", borderwidth=4, r
 resultado.place(x=65, y=365)
 resultado.insert(tk.END, "a")
 resultado.config(state=DISABLED)
-#test
+#configurar scroll
 scroll.config(command=resultado.yview)
 
 '''</WIDGETS>'''
 
-#Main loop y destruccion de ventana
+#Main loop
 ROOT.mainloop()
-ROOT.destroy()
 
 
 
