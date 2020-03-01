@@ -663,6 +663,8 @@ if opcion == 1:
 								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
 							if (m ==3 ):
 								print("\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+							else:
+								print("\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
 							print("Fin del programa.")
 							break #Fin del ciclo
 			
@@ -717,6 +719,8 @@ elif opcion == 2:
 								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
 							if (m == 3):
 								print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+							else:
+								print("NO hay Cuerpo. No se cumple Grupo Abeliano en conjunto con Propiedad Distributiva")
 							print("Fin del programa.")
 							break
 
@@ -747,60 +751,44 @@ elif opcion == 3:
 			if (isinstance(resultado,complex)):
 				print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
 				print("Resultado: ",resultado)
+				break
 			else:
 				print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
 				print("Resultado: ",resultado)
-				if (select() == 1):
-					monoideA(expresion)
-					monoideB(expresion)
-					if (select2() == 1):
-						if (neutro(expresion) == 1):
-							if (inverso(expresion) == 1):
-								if (select3() == 1):
-									conmutatividad(expresion)
+				monoideA(expresion)
+				monoideB(expresion)
+				if (neutro(expresion) == 1):
+					if (inverso(expresion) == 1):
+						conmutatividad(expresion)
 
-									if (select4() == 1):
-										expr2 = segunda_expr()
-										print("La segunda expresión es: ",expr2)
-										resultado2 = eval(expr2)
-										print("Resultado numérico de la segunda expresión: ",resultado2)
-										print("Comprobando si cumple Ley de Composición Interna. . .")
+						expr2 = segunda_expr()
+						print("La segunda expresión es: ",expr2)
+						resultado2 = eval(expr2)
+						print("Resultado numérico de la segunda expresión: ",resultado2)
+						print("Comprobando si cumple Ley de Composición Interna. . .")
 
-										if (reales(expr2) == 1):
-											if (select() == 1): 
-												if (monoideC(expr2) == 1):
-													m+=1
-												if (monoideD(expr2)	== 1):
-													m+=1
-												if (propiedadDistributiva(expresion, expr2) ==1):
-													m+=1
-												if (m == 2):
-													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-												if (m == 3):
-													print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-												print("\nFin del programa.")
-												break	
-										else:
-											print("Fin del programa.")
-											break
-									else:
-										break
-								else:
-									print("Fin del programa.")
-									break
+						if (reales(expr2) == 1):
+							if (monoideC(expr2) == 1):
+								m+=1
+							if (monoideD(expr2)	== 1):
+								m+=1
+							if (propiedadDistributiva(expresion, expr2) ==1):
+								m+=1
+							if (m == 2):
+								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+							if (m == 3):
+								print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
 							else:
-								print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
-								break
+								print("\nNO hay Cuerpo. NO se cumple tanto grupo Abeliano como Propiedad Distributiva")
+							print("\nFin del programa.")
+							break	
 						else:
-							print("No se cumple Elemento Neutro. No pertenece. Fin del programa")
 							break
 					else:
-						print("Fin del programa")
+						print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
 						break
 				else:
-					print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
-					print("Resultado: ",resultado)
-					print("Fin del programa.")
+					print("No se cumple Elemento Neutro. No pertenece. Fin del programa")
 					break
 		except NameError:
 			print("Expresión ingresada no es válida, intente nuevamente.")
@@ -818,51 +806,37 @@ elif opcion == 4:
 				print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
 				print("Resultado: ",resultado)
 
-				if (select() == 1):
-					monoideA(expresion)
-					monoideB(expresion)
+				monoideA(expresion)
+				monoideB(expresion)
 
-					if (select2() == 1):
-						if (neutro(expresion) == 1):
-							if (inverso(expresion) == 1):
-								if (select3() == 1):
-									conmutatividad(expresion)
-
-									if (select4() == 1):
-										expr2 = segunda_expr()
-										print("La segunda expresión es: ",expr2)
-										resultado2 = eval(expr2)
-										if (isinstance(resultado2, complex)):
-											print("La segunda expresión cumple con la Ley de Composición Interna")
-
-											if (select() == 1): 
-												if (monoideC(expr2) == 1):
-													m+=1
-												if (monoideD(expr2) == 1):
-													m+=1	
-												if (propiedadDistributiva(expresion, expr2) == 1):
-													m+=1
-												if (m == 2):
-													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-												if (m == 3):
-													print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
-												print("\nFin del programa.")
-									print("Fin del programa.")
-									break
+				if (neutro(expresion) == 1):
+					if (inverso(expresion) == 1):
+						conmutatividad(expresion)
+						expr2 = segunda_expr()
+						print("La segunda expresión es: ",expr2)
+						resultado2 = eval(expr2)
+						if (isinstance(resultado2, complex)):
+							print("La segunda expresión cumple con la Ley de Composición Interna")
+							if (monoideC(expr2) == 1):
+								m+=1
+							if (monoideD(expr2) == 1):
+								m+=1	
+							if (propiedadDistributiva(expresion, expr2) == 1):
+								m+=1
+							if (m == 2):
+								print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+							if (m == 3):
+								print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
 							else:
-								print("\nNo se cumple Elemento Inverso. No pertenece. Fin del programa.")
-								break
-						else:
-							print("\nNo se cumple Elemento Neutro. No pertenece. Fin del programa.")
+								print("\nNO hay Cuerpo. NO se cumple el Grupo Abeliano con la Propiedad Distributiva")
+							print("\nFin del programa.")
 							break
 					else:
-						print("Fin del programa.")
+						print("\nNo se cumple Elemento Inverso. No pertenece. Fin del programa.")
 						break
 				else:
-					print("Fin del programa.")
+					print("\nNo se cumple Elemento Neutro. No pertenece. Fin del programa.")
 					break
-				print("Fin del programa.")
-				break
 			else:
 				print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
 				print("Resultado: ",resultado)
