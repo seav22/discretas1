@@ -451,7 +451,7 @@ def arranca():
                     mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") NO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
                     break
             except NameError:
-                mostrar.insert(tk.END,"\nExpresión ingresada no es válida. Por favor, intente nuevamente.")
+                mostrar.insert(tk.END,"\nExpresión ingresada no es válida. \nPor favor, intente nuevamente.")
                 break
 				
 
