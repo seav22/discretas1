@@ -346,7 +346,7 @@ def segunda_expr():
 
 		try:
 			#Linkear este input a la segunda inputbox ####################################
-			expr2 = input("Ingrese la segunda expresión: ")
+			expr2 = textArea2.get()
 			resultado2 = eval(expr2)
 			return expr2
 
@@ -415,7 +415,9 @@ def arranca():
                     if (neutro(expresion) == 1):
                         if (inverso(expresion) == 1):
                             conmutatividad(expresion)
-                            expr2 = segunda_expr()
+                            label5.config(state=NORMAL)
+                            textArea2.config(state=NORMAL)
+                            expr2 = segunda_expr() ##aqui popear cuadrito 
                             print("La segunda expresión es: ",expr2)
                             resultado2 = eval(expr2)
                             if (isinstance(resultado2, int)):
@@ -683,10 +685,14 @@ textArea2 = tk.Entry(ROOT)
 textArea2.place(x=275, y=240)
 textArea2.insert(0, "")
 textArea2.config(state=DISABLED)
-#widget boton
-boton = tk.Button(ROOT, text="Comprobar", command=arranca)
-boton.config(font=("bold"))
-boton.place(x=170, y=280)
+#widget boton 1
+boton1 = tk.Button(ROOT, text="Comprobar 1", command=arranca)
+boton1.config(font=("bold"))
+boton1.place(x=50, y=280)
+#widget boton 2
+boton2 = tk.Button(ROOT, text="Comprobar 2", command=segunda_expr)
+boton2.config(font=("bold"))
+boton2.place(x=285, y=280)
 #radio buttons
 radio1 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=1)
 radio1.place(x=20, y=160)
