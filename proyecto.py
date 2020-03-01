@@ -43,40 +43,35 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	res2 = e.replace("b", res1)#2*a - (2*b - c)
 	resultado2 = eval(res2)
 
-	print("Procedimiento: \n")
-	print("Tenemos que: [",e," = a * b ]")
-	print("Aplicamos la propiedad asociativa: ")
-	print("En la propiedad asociativa: (a * b) * c = a * (a * c) \n")
-	print("Se demuestra:")
-	print(asoR, " * c = a * ", asoR4)#primer paso: (2*a - b)  * c = a *  (2*b - c)
-	print("Primera igualdad: ")
-	print(" a = ", asoR)
-	print(" b = c")
-	print("Segunda igualdad: ")
-	print(" a = a")
-	print(" b = ", asoR4)
-	print("Con esto podemos entender que: a * b\n")
+	mostrar.insert(tk.END,"Procedimiento: \n")
+	mostrar.insert(tk.END,"\nTenemos que: \n[",e," = a * b ]")
+	mostrar.insert(tk.END,"Aplicamos la propiedad asociativa: ")
+	mostrar.insert(tk.END,"En la propiedad asociativa:\n\n (a * b) * c = a * (a * c) \n")
+	mostrar.insert(tk.END,"\nSe demuestra:")
+	mostrar.insert(tk.END, asoR, " * c = a * ", asoR4)#primer paso: (2*a - b)  * c = a *  (2*b - c)
+	mostrar.insert(tk.END,"\nPrimera igualdad: ")
+	mostrar.insert(tk.END," a = ", asoR)
+	mostrar.insert(tk.END," b = c")
+	mostrar.insert(tk.END,"\nSegunda igualdad: ")
+	mostrar.insert(tk.END," a = a")
+	mostrar.insert(tk.END," b = ", asoR4)
+	mostrar.insert(tk.END,"\nCon esto podemos entender que: a * b\n")
 
 	if (resultado == resultado2):
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Queda claro que la sigiente expresión:  (",e,")")
-		print("SI CUMPLE, se trata de un monoide asociativo")
-		print("Resultado numérico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"Queda claro que la sigiente expresión:\n  (",e,")")
+		mostrar.insert(tk.END,"\nSI CUMPLE, \nse trata de un monoide asociativo")
 		return "1"
 
 	else:
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Ha sido demostrado que la siquiente expresión: (",e,")")
-		print("NO CUMPLE, NO ES monoide asociativo ")
-		print("Resultado numerico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END)
+		mostrar.insert(tk.END,"Ha sido demostrado que\n la siquiente expresión: (",e,")")
+		mostrar.insert(tk.END,"\nNO CUMPLE, \nNO ES monoide asociativo ")
 
 def monoideB(e):
 	#aplicamos remplazo en asociativa
@@ -100,40 +95,38 @@ def monoideB(e):
 
 	#2*(2*a - b) - c  =  2*a - (2*b - c)
 
-	print("Muestra del procedimiento: \n")
-	print("Tenemos: [",e," = a + b ]")
-	print("Aplicamos la propiedad asociativa. . . ")
-	print("(a + b) + c = a + (a + c) \n")
-	print("Se demuestra la propiedad: ")
-	print(asoR, " + c = a + ", asoR4)#primer paso: (2*a - b)  + c = a +  (2*b - c)
-	print("Primera igualdad: ")
-	print(" a = ", asoR)
-	print(" b = c")
-	print("Segunda igualdad: ")
-	print(" a = a")
-	print(" b = ", asoR4)
-	print("Es posible dar a entender que: a * b\n")
+	mostrar.insert(tk.END,"\nMuestra del procedimiento: \n")
+	mostrar.insert(tk.END,"\nTenemos: [",e," = a + b ]")
+	mostrar.insert(tk.END,"Aplicamos la \npropiedad asociativa. . . ")
+	mostrar.insert(tk.END,"\n(a + b) + c = a + (a + c) \n")
+	mostrar.insert(tk.END,"\nSe demuestra la propiedad: \n")
+	mostrar.insert(tk.END,asoR, " + c = a + ", asoR4)#primer paso: (2*a - b)  + c = a +  (2*b - c)
+	mostrar.insert(tk.END,"\nPrimera igualdad: ")
+	mostrar.insert(tk.END," a = ", asoR)
+	mostrar.insert(tk.END," b = c")
+	mostrar.insert(tk.END,"\nSegunda igualdad: ")
+	mostrar.insert(tk.END," \na = a")
+	mostrar.insert(tk.END," \nb = ", asoR4)
+	mostrar.insert(tk.END,"\nEs posible dar a entender que:\n a * b\n")
 
 	if (resultado == resultado2):
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Se demuestra que la siguiente expresión (",e,")")
-		print("SI CUMPLE, ES UN monoide asociativo ")
-		print("Resultado numérico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"\nSe demuestra que la siguiente expresión (",e,")\n")
+		mostrar.insert(tk.END,"\nSI CUMPLE, ES UN monoide asociativo \n")
+		mostrar.insert(tk.END,"\nResultado numérico: \n")
+		mostrar.insert(tk.END,resultado," = ",resultado2)
 		return "1"
 
 	else:
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Se demuestra que la siguiente ecueacion (",e,")")
-		print("NO CUMPLE, NO SE TRATA DE UN monoide asociativo ")
-		print("Resultado numerico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,)
+		mostrar.insert(tk.END,"\nSe demuestra que la siguiente ecuacion (",e,")\n")
+		mostrar.insert(tk.END,"\nNO CUMPLE, \nNO SE TRATA DE UN monoide asociativo \n")
+		mostrar.insert(tk.END,resultado," = ",resultado2)
 
 #Copia de A
 def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo (a * b) * c = a * (b * c)  [(a * b)]
@@ -157,39 +150,33 @@ def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	res2 = e.replace("b", res1)#2*a - (2*b - c)
 	resultado2 = eval(res2)
 
-	print("Procedimiento: \n")
-	print("Tenemos que: [",e," = a * b ]")
-	print("Aplicamos la propiedad asociativa: ")
-	print("En la propiedad asociativa: (a * b) * c = a * (a * c) \n")
-	print("Se demuestra:")
-	print(asoR, " * c = a * ", asoR4)#primer paso: (2*a - b)  * c = a *  (2*b - c)
-	print("Primera igualdad: ")
-	print(" a = ", asoR)
-	print(" b = c")
-	print("Segunda igualdad: ")
-	print(" a = a")
-	print(" b = ", asoR4)
-	print("Con esto podemos entender que: a * b\n")
+	mostrar.insert(tk.END, "\nProcedimiento: \n")
+	mostrar.insert(tk.END, "\nTenemos que: [",e," = a * b ]\n")
+	mostrar.insert(tk.END, "\nAplicamos la propiedad asociativa: \n")
+	mostrar.insert(tk.END, "\nEn la propiedad asociativa: (a * b) * c = a * (a * c) \n")
+	mostrar.insert(tk.END, "\nSe demuestra:\n")
+	mostrar.insert(tk.END, asoR, " * c = a * ", asoR4)#primer paso: (2*a - b)  * c = a *  (2*b - c)
+	mostrar.insert(tk.END, "\nPrimera igualdad: \n")
+	mostrar.insert(tk.END, " a = ", asoR)
+	mostrar.insert(tk.END, " \nb = c\n")
+	mostrar.insert(tk.END, "\nSegunda igualdad: \n")
+	mostrar.insert(tk.END, " a = a")
+	mostrar.insert(tk.END, " b = ", asoR4)
+	mostrar.insert(tk.END, "\nCon esto podemos entender que: a * b\n")
 
 	if (resultado == resultado2):
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Queda claro que la sigiente expresión:  (",e,")")
-		print("SI CUMPLE, se trata de un monoide asociativo")
-		print("Resultado numérico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"\nQueda claro que la sigiente expresión:  (",e,")\n")
+		mostrar.insert(tk.END,"\nSI CUMPLE, se trata de un monoide asociativo\n")
 		return 1
 	else:
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Ha sido demostrado que la siquiente expresión: (",e,")")
-		print("NO CUMPLE, NO ES monoide asociativo ")
-		print("Resultado numerico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"Ha sido demostrado que la \nsiquiente expresión: (",e,")")
+		mostrar.insert(tk.END,"NO CUMPLE, NO ES monoide \nasociativo ")
 
 def monoideD(e):
 	#aplicamos remplazo en asociativa
@@ -213,91 +200,86 @@ def monoideD(e):
 
 	#2*(2*a - b) - c  =  2*a - (2*b - c)
 
-	print("Muestra del procedimiento: \n")
-	print("Tenemos: [",e," = a + b ]")
-	print("Aplicamos la propiedad asociativa. . . ")
-	print("(a + b) + c = a + (a + c) \n")
-	print("Se demuestra la propiedad: ")
-	print(asoR, " + c = a + ", asoR4)#primer paso: (2*a - b)  + c = a +  (2*b - c)
-	print("Primera igualdad: ")
-	print(" a = ", asoR)
-	print(" b = c")
-	print("Segunda igualdad: ")
-	print(" a = a")
-	print(" b = ", asoR4)
-	print("Es posible dar a entender que: a * b\n")
+	mostrar.insert(tk.END,"\nMuestra del procedimiento: \n")
+	mostrar.insert(tk.END,"\nTenemos: [",e," = a + b ]")
+	mostrar.insert(tk.END,"\nAplicamos la propiedad asociativa. . . \n")
+	mostrar.insert(tk.END,"\n(a + b) + c = a + (a + c) \n")
+	mostrar.insert(tk.END,"\nSe demuestra la propiedad: \n")
+	mostrar.insert(tk.END,asoR, " + c = a + ", asoR4)#primer paso: (2*a - b)  + c = a +  (2*b - c)
+	mostrar.insert(tk.END,"\nPrimera igualdad: \n")
+	mostrar.insert(tk.END," a = ", asoR)
+	mostrar.insert(tk.END," b = c")
+	mostrar.insert(tk.END,"\nSegunda igualdad: \n")
+	mostrar.insert(tk.END," \na = a\n")
+	mostrar.insert(tk.END," \nb = ", asoR4)
+	mostrar.insert(tk.END,"\nEs posible dar a entender que: a * b\n")
 
 	if (resultado == resultado2):
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Se demuestra que la siguiente expresión (",e,")")
-		print("SI CUMPLE, ES UN monoide asociativo ")
-		print("Resultado numérico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,)
+		mostrar.insert(tk.END,"\nSe demuestra que la siguiente expresión (",e,")\n")
+		mostrar.insert(tk.END,"\nSI CUMPLE, ES UN monoide asociativo \n")
 		return 1
 
 		#Retornando 1 para la comprobación de grupo abeliano
 
 	else:
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(result2, " = ", res2)
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print()
-		print("Se demuestra que la siguiente ecueacion (",e,")")
-		print("NO CUMPLE, NO SE TRATA DE UN monoide asociativo ")
-		print("Resultado numerico: ")
-		print(resultado," = ",resultado2)
+		mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
+		mostrar.insert(tk.END,result2, " = ", res2)
+		mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
+		mostrar.insert(tk.END,)
+		mostrar.insert(tk.END,"Se demuestra que la siguiente ecueacion (",e,")")
+		mostrar.insert(tk.END,"NO CUMPLE, NO SE TRATA DE UN monoide asociativo ")
 
 def neutro(e): # elemento neutro
 	for i in e:
 		if (i == "/") :
-			print("La división no es un operador alojado por el Elemento Neutro.")
+			mostrar.insert(tk.END,"La división no es un operador alojado por el Elemento Neutro.")
 			return 0
 		elif ( i == "-") or (i == "+"):
 			res2 = eval(e)
 			neutro = 0
 			neutro2 = 'e'
-			print("\nProcedimiento :")
-			print("Se aplica Elemento Neutro. . . ")
-			print("Procedimiento canónico. . .")
-			print("a + b => a + ae = a")
-			print("ae = a - a")
-			print("ae = 0")
-			print("e = 0/a")
-			print("Propiedad:")
-			print("(",e,") + " ,neutro2," = ")
-			print("Entones, la igualdad es. . . ")
-			print("El valor de la expresión ingresada es: ",res2)
+			mostrar.insert(tk.END,"\nProcedimiento :")
+			mostrar.insert(tk.END,"\nSe aplica Elemento Neutro. . . \n")
+			mostrar.insert(tk.END,"\nProcedimiento canónico. . .\n")
+			mostrar.insert(tk.END,"\na + b => a + ae = a\n")
+			mostrar.insert(tk.END,"\nae = a - a\n")
+			mostrar.insert(tk.END,"\nae = 0\n")
+			mostrar.insert(tk.END,"\ne = 0/a\n")
+			mostrar.insert(tk.END,"\nPropiedad:\n")
+			mostrar.insert(tk.END,"\n(",e,") + " ,neutro2," = ")
+			mostrar.insert(tk.END,"\nEntones, la igualdad es. . . \n")
+			mostrar.insert(tk.END,"\nEl valor de la expresión ingresada es: \n",res2)
 			res = res2 + neutro
 			if (res == res2):
-				print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-				print(e, "+", neutro2)
-				print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-				print("Expresión (",e,") posee Elemento Neutro en la Adición (a + b)")
+				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+				mostrar.insert(tk.END,e, "+", neutro2)
+				mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+				mostrar.insert(tk.END,"\nExpresión (",e,") posee Elemento Neutro en la Adición (a + b)\n")
 				return 1
 			else:
-				print("Expresión (",e,") no posee Elemento Neutro en la Adición (a + b)")
+				mostrar.insert(tk.END,"\nExpresión (",e,") no posee Elemento Neutro en la Adición (a + b)\n")
 				return 0
 		elif (i == "*"):
 			res2 = eval(e)
 			neutro = 1
 			neutro2 = 'e'
-			print("Aplicando Elemento Neutro. . .")
-			print("(",e,") * ",neutro2,"")
+			mostrar.insert(tk.END,"\nAplicando Elemento Neutro. . .\n")
+			mostrar.insert(tk.END,"(",e,") * ",neutro2,"\n")
 			res = res2 * neutro
-			print("Entonces, la igualdad es: ")
+			mostrar.insert(tk.END,"\nEntonces, la igualdad es: ")
 			if (res == res2):
-				print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-				print(e, "*", neutro2)
-				print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-				print("La expresión (",e,") SI posee Elemento Neutro en la MULTIPLICACIÓN (a * b)")
-				print()
+				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+				mostrar.insert(tk.END,e, "*", neutro2)
+				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+				mostrar.insert(tk.END,"\nLa expresión (",e,") SI posee Elemento Neutro \nen la MULTIPLICACIÓN (a * b)")
+				mostrar.insert(tk.END,)
 				return 1
 			else:
-				print("\nLa expresión (",e,") NO posee Elemento Neutro en MULTIPLICACIÓN (a * b)")
-				print()
+				mostrar.insert(tk.END,"\nLa expresión (",e,") NO posee Elemento Neutro \nen MULTIPLICACIÓN (a * b)")
 				return 0
 
 # Elemento inverso
@@ -315,26 +297,22 @@ def inverso(e):
 	res4 = eval(e)
 	resT = (res4 * res3)
 
-	print("PROCESO ADITIVO: ")
-
-	print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-	print("PROCESO MULTIPLICATIVO: ")
-	print("Aplicando Elemento Inverso. . . ")
-
-	print("\nTenemos que, la igualdad es: ")
+	mostrar.insert(tk.END,"\nPROCESO ADITIVO: ")
+	mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
+	mostrar.insert(tk.END,"\nPROCESO MULTIPLICATIVO: ")
+	mostrar.insert(tk.END,"\nAplicando Elemento Inverso. . . ")
+	mostrar.insert(tk.END,"\nTenemos que, la igualdad es: ")
 	if ((res2 + res) == 0) and (resT == 1):
-		print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(e, "+", Inver, "ADITIVO")
-		print(e, "+", Inver2, "MULTIPLICATIVO")
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		print("La expresión (",e,") SI tiene Elemento Inverso ADITIVO [",Inver,"]")
-		print("La expresión (",e,") SI tiene Elemento Inverso MULTIPLICATIVO [",Inver2,"]")
-		print()
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
+		mostrar.insert(tk.END,e, "+", Inver, "ADITIVO")
+		mostrar.insert(tk.END,e, "+", Inver2, "MULTIPLICATIVO")
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"\nLa expresión (",e,") SI tiene Elemento Inverso ADITIVO [",Inver,"]\n")
+		mostrar.insert(tk.END,"\nLa expresión (",e,") SI tiene Elemento Inverso MULTIPLICATIVO [",Inver2,"]\n")
 		return 1
 		# retornando 1 para la comprobacion de grupo abeliano
 	else:
-		print("La expresión (",e,") NO tiene Elemento Inverso ADITIVO ó MULTIPLICATIVO \n[",Inver,"] o [",Inver2,"]")
-		print()
+		mostrar.insert(tk.END,"\nLa expresión (",e,") NO tiene Elemento Inverso ADITIVO ó MULTIPLICATIVO \n[",Inver,"] o [",Inver2,"]")
 		return 0
 
  # Verificando si es grupo
@@ -343,45 +321,37 @@ def conmutatividad(e): #Grupo
 	conmu = conmu.replace("a","b")
 	conmu = conmu.replace("l","a")
 
-	print("Procedimiento: ")
-	print("Tenemos: (",e," = b + a )")
-	print("Aplicamos la propiedad conmutativa: ")
-	print("Tenemos: a + b = a + b")
-	print("Se demuestra: ")
-	print(e, " = ", conmu)
-	print("La igualdad es: ")
+	mostrar.insert(tk.END,"\nProcedimiento: \n")
+	mostrar.insert(tk.END,"\nTenemos: (",e," = b + a )\n")
+	mostrar.insert(tk.END,"\nAplicamos la propiedad conmutativa: \n")
+	mostrar.insert(tk.END,"\nTenemos: a + b = a + b\n")
+	mostrar.insert(tk.END,"\nSe demuestra: \n")
 
 	if (eval(e) == eval(conmu)):
-		print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		print(eval(e), " = ", eval(conmu))
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		print("La siquiente expresión (",e,")")
-		print("SI CUMPLE con la Propiedad Conmutativa.")
-		print("\nSI es un Grupo Abeliano.")
-		print("Resultado: ")
-		print(eval(e)," = ",eval(conmu))
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"La siquiente expresión (",e,")\n")
+		mostrar.insert(tk.END,"\nSI CUMPLE con la Propiedad Conmutativa.\n")
+		mostrar.insert(tk.END,"\nSI es un Grupo Abeliano.\n")
 	else:
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		print(eval(e), " = ", eval(conmu))
-		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		print("Se de muestra que la siquiente ecueacion (",e,")")
-		print("NO CUMPLE con la Propiedad Conmutativa.")
-		print("NO es un Grupo Abeliano.")
-		print("\nResultado: ")
-		print(eval(e)," = ",eval(conmu))
-
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+		mostrar.insert(tk.END,"\nSe de muestra que la siquiente ecueacion (",e,")")
+		mostrar.insert(tk.END,"\nNO CUMPLE con la Propiedad Conmutativa.")
+		mostrar.insert(tk.END,"\nNO es un Grupo Abeliano.")
 # Obteniendo valor de la segunda expresión 
 def segunda_expr():
 
 	while True:
 
 		try:
+			#Linkear este input a la segunda inputbox ####################################
 			expr2 = input("Ingrese la segunda expresión: ")
 			resultado2 = eval(expr2)
 			return expr2
 
 		except ValueError:
-			print("La segunda expresión no es válida. Ingrese nuevamente.")
+			mostrar.insert(tk.END,"La segunda expresión no es válida. Ingrese nuevamente.")
 
 # Función para la elaboración de la propiedad distributiva
 def propiedadDistributiva(e1, e2):
@@ -397,15 +367,15 @@ def propiedadDistributiva(e1, e2):
 	dist2 = dist2.replace("a*b",e2)
 	dist2 = dist2.replace("a*c",elm1)
 	r2 = eval(dist2)
-	print("\nPropiedad Distributiva")
-	print(dist1, "debe ser igual a ",dist2)
+	mostrar.insert(tk.END,"\nPropiedad Distributiva")
+	mostrar.insert(tk.END,dist1, "debe ser igual a ",dist2)
 
 	if (r1 == r2):
-		print("\nLa expresión es anillo.")
+		mostrar.insert(tk.END,"\nLa expresión es anillo.")
 		return 1
 		# retornando 1 para la comprobacion de cuerpo
 	else:
-		print("La expresión no es anillo.")
+		mostrar.insert(tk.END,"La expresión no es anillo.")
 
 # Comprobación de números reales.
 def reales(e):
@@ -414,11 +384,13 @@ def reales(e):
 
 	#Comprobando si es real
 	if (isinstance(numerico, complex)):
-		print("No cumple la Ley de Composición Interna. NO es un número real.")
+		mostrar.insert(tk.END,"No cumple la Ley de Composición Interna. NO es un número real.")
 		return 0
 	else:
-		print("Cumple con la Ley de Composición Interna. Es un número real.")
+		mostrar.insert(tk.END,"Cumple con la Ley de Composición Interna. Es un número real.")
 		return 1
+
+## MODIFICAR LOS PRINT EN ARRANCA POR MOSTRAR.INSERT
 
 def arranca():
     
