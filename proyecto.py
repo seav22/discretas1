@@ -631,6 +631,9 @@ def bloquearVentanas():
 	radio4.config(state=DISABLED)
 	messagebox.showinfo(message="Fin del programa.\n Si desea reutilizarlo debe reiniciar la aplicacion", title="Aviso")
 
+def reset():
+	print(" ")
+
 
 def arranca2():
 
@@ -746,13 +749,16 @@ boton2 = tk.Button(ROOT, text="Comprobar 2", command=arranca2)
 boton2.config(font=("bold"))
 boton2.place(x=285, y=280)
 boton2.config(state=DISABLED)
+#widget boton reset
+reset = tk.Button(ROOT, text="Reset", command=reset)
+reset.place(x=203, y=280)
 #radio buttons
 radio1 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=1)
 radio1.place(x=20, y=160)
 radio2 = tk.Radiobutton(ROOT, text="NATURALES", variable = v, value=2)
 radio2.place(x=120, y=160)
 radio3 = tk.Radiobutton(ROOT, text="REALES", variable = v, value=3)
-radio3.place(x=220, y=160)
+radio3.place(x=230, y=160)
 radio4 = tk.Radiobutton(ROOT, text="COMPLEJOS", variable = v, value=4)
 radio4.place(x=320, y=160)
 radio3.select()
