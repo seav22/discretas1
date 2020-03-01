@@ -6,6 +6,7 @@ except ImportError:
     raise ImportError("Se requiere la libreria tkinter para continuar")
 
 from tkinter import *
+from tkinter import messagebox
 import pygame
 from tkinter.ttk import *
 import cmath
@@ -218,7 +219,6 @@ def monoideD(e):
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,)
 		mostrar.insert(tk.END,"\nSe demuestra que la siguiente expresión (",e,")\n")
 		mostrar.insert(tk.END,"\nSI CUMPLE, ES UN monoide asociativo \n")
 		return 1
@@ -229,7 +229,6 @@ def monoideD(e):
 		mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-		mostrar.insert(tk.END,)
 		mostrar.insert(tk.END,"Se demuestra que la siguiente ecueacion (",e,")")
 		mostrar.insert(tk.END,"NO CUMPLE, NO SE TRATA DE UN monoide asociativo ")
 
@@ -276,7 +275,6 @@ def neutro(e): # elemento neutro
 				mostrar.insert(tk.END,e, "*", neutro2)
 				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 				mostrar.insert(tk.END,"\nLa expresión (",e,") SI posee Elemento Neutro \nen la MULTIPLICACIÓN (a * b)")
-				mostrar.insert(tk.END,)
 				return 1
 			else:
 				mostrar.insert(tk.END,"\nLa expresión (",e,") NO posee Elemento Neutro \nen MULTIPLICACIÓN (a * b)")
@@ -417,35 +415,37 @@ def arranca():
                             conmutatividad(expresion)
                             label5.config(state=NORMAL)
                             textArea2.config(state=NORMAL)
-                            expr2 = segunda_expr() ##aqui popear cuadrito 
-                            print("La segunda expresión es: ",expr2)
-                            resultado2 = eval(expr2)
-                            if (isinstance(resultado2, int)):
-                                print("La segunda expresión cumple con la Ley de Composición Interna")
-                                print("Comprobando MONOIDE ASOCIATIVO. . .")
+                            messagebox.showinfo(message="Ya puede introducir la segunda ecuacion!\nProceda a hacerlo y presionar 'Comprobar 2'", title="Aviso")
+                            boton2.config(state=NORMAL)
+							# expr2 = segunda_expr()
+                            # print("La segunda expresión es: ",expr2)
+                            # resultado2 = eval(expr2)
+                            # if (isinstance(resultado2, int)):
+                            #     print("La segunda expresión cumple con la Ley de Composición Interna")
+                            #     print("Comprobando MONOIDE ASOCIATIVO. . .")
 
-                                
-                                if (monoideC(expr2) == 1):
-                                    m+=1
-                                if (monoideD(expr2) == 1):
-                                    m+=1	
-                                if (propiedadDistributiva(expresion, expr2) == 1):
-                                    m+=1
-                                if (m == 2):
-                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-                                if (m ==3 ):
-                                    print("\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
-                                else:
-                                    print("\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-                                print("Fin del programa.")
-                                break #Fin del ciclo
-                
-                            else:
-                                print("No se cumple el Elemento Inverso. No pertenece. Fin del programa.")
-                                break
+                            #     if (monoideC(expr2) == 1):
+                            #         m+=1
+                            #     if (monoideD(expr2) == 1):
+                            #         m+=1	
+                            #     if (propiedadDistributiva(expresion, expr2) == 1):
+                            #         m+=1
+                            #     if (m == 2):
+                            #         print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+                            #     if (m ==3 ):
+                            #         print("\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+                            #     else:
+                            #         print("\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+                            #     print("Fin del programa.")
+                            break #Fin del ciclo
+
                         else:
-                            print("No se cumple el Elemento Neutro. No pertenece. Fin del programa")
+                            print("No se cumple el Elemento Inverso. No pertenece. Fin del programa.")
+                            messagebox.showinfo(message="No se habilitara la entrada de la segunda operacion.\n Esto debido a que no hay elemento inverso", title="Aviso")
                             break
+                    else:
+                        print("No se cumple el Elemento Neutro. No pertenece. Fin del programa")
+                        break
                         
                 else:
                     print("La expresión ingresada (",expresion,") NO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
@@ -618,6 +618,31 @@ def arranca():
             except NameError:
                 print("Expresión ingresada no es válida, intente nuevamente.")
 
+def arranca2():
+
+	expresion = str(textArea1.get())
+	expr2 = segunda_expr()
+	mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+	resultado2 = eval(expr2)
+	if (isinstance(resultado2, int)):
+		mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
+		mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+		m = 0
+
+		if (monoideC(expr2) == 1):
+			m+=1
+		if (monoideD(expr2) == 1):
+			m+=1	
+		if (propiedadDistributiva(expresion, expr2) == 1):
+			m+=1
+		if (m == 2):
+			mostrar.insert(tk.END, "\nLa segunda expresión ingresada es SEMIGRUPO.")
+		if    (m ==3 ):
+			mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+		else:
+			mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+		mostrar.insert(tk.END, "Fin del programa.")
+
 
 '''</CODIGO>'''
 
@@ -690,9 +715,10 @@ boton1 = tk.Button(ROOT, text="Comprobar 1", command=arranca)
 boton1.config(font=("bold"))
 boton1.place(x=50, y=280)
 #widget boton 2
-boton2 = tk.Button(ROOT, text="Comprobar 2", command=segunda_expr)
+boton2 = tk.Button(ROOT, text="Comprobar 2", command=arranca2)
 boton2.config(font=("bold"))
 boton2.place(x=285, y=280)
+boton2.config(state=DISABLED)
 #radio buttons
 radio1 = tk.Radiobutton(ROOT, text="ENTEROS", variable = v, value=1)
 radio1.place(x=20, y=160)
@@ -716,13 +742,6 @@ mostrar.place(x=65, y=365)
 #mostrar.config(state=DISABLED)
 #configurar scroll
 scroll.config(command=mostrar.yview)
-popup = Toplevel(ROOT)
-popup.title("prueba")
-popup.config(width=120, height=120)
-msg = Message(popup, text="")
-msg.place(x=100, y=100)
-button123 = Button(popup, text="Cerrar", command=popup.destroy)
-button123.pack
 
 '''</WIDGETS>'''
 
