@@ -28,13 +28,13 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	aso = "(a * b)" # * c
 	aso1 = "(a * c)"
 	aso3 = "a * b"
-	asoR = aso.replace("a * b", expresion) #Sustituyendo a * b por la expresión ingresada
-	asoR2 = aso1.replace("a * c", expresion) #Sustituyendo a * c por la expresión ingresada
+	asoR = aso.replace("a * b", e) #Sustituyendo a * b por la expresión ingresada
+	asoR2 = aso1.replace("a * c", e) #Sustituyendo a * c por la expresión ingresada
 	asoR3 = asoR2.replace("b", "c")  #Sustituyendo b de la expresión ingresada por c
 	asoR4 = asoR3.replace("a","b") #Sustituyendo a de la expresión ingresada por b
 	
 	#Aplicando segundo reemplazo.
-	result = e.replace("b", "c")
+	result = e.replace("
 	result2 = result.replace("a", asoR ) #2*(2*a - b) - c
 	resultado = eval(result2)
 
@@ -83,8 +83,8 @@ def monoideB(e):
 	aso = "(a + b)"
 	aso1 = "(a + c)"
 	aso3 = "a + b"
-	asoR = aso.replace("a + b", expresion)
-	asoR2 = aso1.replace("a + c", expresion)
+	asoR = aso.replace("a + b", e)
+	asoR2 = aso1.replace("a + c", e)
 	asoR3 = asoR2.replace("b", "c")
 	asoR4 = asoR3.replace("a","b")
 	
