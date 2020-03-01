@@ -440,18 +440,19 @@ def arranca():
                             break #Fin del ciclo
 
                         else:
-                            print("No se cumple el Elemento Inverso. No pertenece. Fin del programa.")
-                            messagebox.showinfo(message="No se habilitara la entrada de la segunda operacion.\n Esto debido a que no hay elemento inverso", title="Aviso")
+                            mostrar.insert(tk.END,"\nNo se cumple el Elemento Inverso. No pertenece. Fin del programa.")
+                            messagebox.showinfo(message="\nNo se habilitara la entrada de la segunda operacion.\n Esto debido a que no hay elemento inverso", title="Aviso")
                             break
                     else:
-                        print("No se cumple el Elemento Neutro. No pertenece. Fin del programa")
+                        mostrar.insert(tk.END,"\nNo se cumple el Elemento Neutro. No pertenece. Fin del programa")
                         break
                         
                 else:
-                    print("La expresión ingresada (",expresion,") NO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
+                    mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") NO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
                     break
             except NameError:
-                print("Expresión ingresada no es válida. Por favor, intente nuevamente.")
+                mostrar.insert(tk.END,"\nExpresión ingresada no es válida. Por favor, intente nuevamente.")
+                break
 				
 
     #Natural
@@ -620,29 +621,41 @@ def arranca():
 
 def arranca2():
 
-	expresion = str(textArea1.get())
-	expr2 = segunda_expr()
-	mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
-	resultado2 = eval(expr2)
-	if (isinstance(resultado2, int)):
-		mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
-		mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
-		m = 0
+	#Trabajando con Enteros
+	opcion = int(v.get())
+	if opcion == 1:
+		while True:
 
-		if (monoideC(expr2) == 1):
-			m+=1
-		if (monoideD(expr2) == 1):
-			m+=1	
-		if (propiedadDistributiva(expresion, expr2) == 1):
-			m+=1
-		if (m == 2):
-			mostrar.insert(tk.END, "\nLa segunda expresión ingresada es SEMIGRUPO.")
-		if    (m ==3 ):
-			mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
-		else:
-			mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-		mostrar.insert(tk.END, "Fin del programa.")
-
+			try:
+				expresion = str(textArea1.get())
+				expr2 = segunda_expr()
+				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				resultado2 = eval(expr2)
+				if (isinstance(resultado2, int)):
+					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					m = 0
+					if (monoideC(expr2) == 1):
+						m+=1
+					if (monoideD(expr2) == 1):
+						m+=1	
+					if (propiedadDistributiva(expresion, expr2) == 1):
+						m+=1
+					if (m == 2):
+						mostrar.insert(tk.END, "\nLa segunda expresión ingresada es SEMIGRUPO.")
+					if    (m ==3 ):
+						mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+					else:
+						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+					mostrar.insert(tk.END, "Fin del programa.")
+					break
+				else:
+					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					break
+			except NameError:
+				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor inténtelo nuevamente.")
+				print("Valor ingresado no es válido. Por favor, intente de nuevo.")
+				break
 
 '''</CODIGO>'''
 
