@@ -116,8 +116,8 @@ def monoideB(e):
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		#mostrar.insert(tk.END,"\nSe demuestra que la siguiente expresión (",e,")\n")
 		mostrar.insert(tk.END,"\nSI CUMPLE, ES UN monoide asociativo \n")
-		mostrar.insert(tk.END,"\nResultado numérico: \n")
-		mostrar.insert(tk.END,resultado," = ",resultado2)
+		#mostrar.insert(tk.END,"\nResultado numérico: \n")
+		#mostrar.insert(tk.END,resultado," = ",resultado2)
 		return "1"
 
 	else:
@@ -250,13 +250,13 @@ def neutro(e): # elemento neutro
 			mostrar.insert(tk.END,"\ne = 0/a\n")
 			mostrar.insert(tk.END,"\nPropiedad:\n")
 			#mostrar.insert(tk.END,"\n(",e,") + " ,neutro2," = ")
-			mostrar.insert(tk.END,"\nEntones, la igualdad es. . . \n")
-			mostrar.insert(tk.END,"\nEl valor de la expresión ingresada es: \n",res2)
+			mostrar.insert(tk.END,"\nEntonces, la igualdad es. . . \n")
+			#mostrar.insert(tk.END,"\nEl valor de la expresión ingresada es: \n",res2)
 			res = res2 + neutro
 			if (res == res2):
-				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-				mostrar.insert(tk.END,e, "+", neutro2)
-				mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+				#mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
+				#mostrar.insert(tk.END,e, "+", neutro2)
+				#mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 				mostrar.insert(tk.END,"\nExpresión posee Elemento Neutro en la Adición (a + b)\n")
 				return 1
 			else:
@@ -295,13 +295,10 @@ def inverso(e):
 	res4 = eval(e)
 	resT = (res4 * res3)
 
-	mostrar.insert(tk.END,"\nPROCESO ADITIVO: ")
-	mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-	mostrar.insert(tk.END,"\nPROCESO MULTIPLICATIVO: ")
 	mostrar.insert(tk.END,"\nAplicando Elemento Inverso. . . ")
 	mostrar.insert(tk.END,"\nTenemos que, la igualdad es: ")
 	if ((res2 + res) == 0) and (resT == 1):
-		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
+		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,e, "+", Inver, "ADITIVO")
 		mostrar.insert(tk.END,e, "+", Inver2, "MULTIPLICATIVO")
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
@@ -448,7 +445,7 @@ def arranca():
                         break
                         
                 else:
-                    mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") NO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
+                    mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") \nNO cumple la Ley de Composición Interna. \nSu resultado es: ",resultado," ")
                     break
             except NameError:
                 mostrar.insert(tk.END,"\nExpresión ingresada no es válida. \nPor favor, intente nuevamente.")
@@ -466,8 +463,8 @@ def arranca():
                 resultado = eval(expresion)
 
                 if (resultado >= 0 and isinstance(resultado,int)):
-                    mostrar.insert(tk.END,"La expresión (",expresion,") cumple con la Ley de Composición Interna.")
-                    mostrar.insert(tk.END,"Resultado: ",resultado)
+                    mostrar.insert(tk.END,"La expresión (",expresion,") \ncumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"\nResultado: ",resultado)
                     monoideA(expresion)
                     monoideB(expresion)
 
@@ -504,18 +501,18 @@ def arranca():
                             #else:
                               #  mostrar.insert(tk.END,"La segunda expresión NO cumple con la Ley de Composición Interna")
                         else:
-                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece.")
+                            mostrar.insert(tk.END,"\nNo se cumple Elemento Inverso. \nNo pertenece.")
                             break
                     else:
-                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece.")
+                        mostrar.insert(tk.END,"\nNo se cumple Elemento Neutro. \nNo pertenece.")
                         break
                 else:
-                    mostrar.insert(tk.END,"La expresión (",expresion,") no cumple con la Ley de Composición Interna.")
-                    mostrar.insert(tk.END,"Resultado: ",resultado)
-                    mostrar.insert(tk.END,"Fin del programa.")
+                    mostrar.insert(tk.END,"\nLa expresión (",expresion,") \nNO cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"\nResultado: ",resultado)
+                    mostrar.insert(tk.END,"\nFin del programa.")
                     break
             except NameError:
-            	mostrar.insert(tk.END,"Expresión ingresada no es válida, intente nuevamente.")
+            	mostrar.insert(tk.END,"\nExpresión ingresada no es válida, intente nuevamente.")
             	print("Expresión ingresada no es válida, intente nuevamente.")
             	break
 
@@ -523,18 +520,18 @@ def arranca():
     elif opcion == 3:
 
         while True:
-            mostrar.insert(tk.END,"\nHa escogido trabajar con el conjunto de los números reales. Por favor, ingrese la expresión matemática a comprobar: ")
+            mostrar.insert(tk.END,"\nHa escogido trabajar con el conjunto de los números reales.")
 
             try:
                 expresion = str(textArea1.get())
                 resultado = eval(expresion)
                 if (isinstance(resultado,complex)):
-                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
-                    mostrar.insert(tk.END,"Resultado: ",resultado)
+                    mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") \nNO cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"\nResultado: ",resultado)
                     break
                 else:
-                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
-                    mostrar.insert(tk.END,"Resultado: ",resultado)
+                    mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") \nCUMPLE con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"\nResultado: ",resultado)
                     monoideA(expresion)
                     monoideB(expresion)
                     if (neutro(expresion) == 1):
@@ -569,26 +566,26 @@ def arranca():
                             #else:
                              #   break
                         else:
-                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece.")
+                            mostrar.insert(tk.END,"\nNo se cumple Elemento Inverso. No pertenece.")
                             break
                     else:
-                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece.")
+                        mostrar.insert(tk.END,"\nNo se cumple Elemento Neutro. No pertenece.")
                         break
             except NameError:
-                mostrar.insert(tk.END,"Expresión ingresada no es válida, intente nuevamente.")
+                mostrar.insert(tk.END,"\nExpresión ingresada no es válida, intente nuevamente.")
 
     #Complejos
     elif opcion == 4:
 
         while True:
-            mostrar.insert(tk.END,"\nHa escogido trabajar con el conunto de los números complejos. Por favor, ingrese la expresión matemática a comprobar")
+            mostrar.insert(tk.END,"\nHa escogido trabajar con el conunto de los números complejos.")
 
             try:
                 expresion = str(textArea1.get())
                 resultado = eval(expresion)
                 if (isinstance(resultado, complex)):
-                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
-                    mostrar.insert(tk.END,"Resultado: ",resultado)
+                    mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") \nCUMPLE con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"\nResultado: ",resultado)
 
                     monoideA(expresion)
                     monoideB(expresion)
@@ -627,12 +624,12 @@ def arranca():
                         mostrar.insert(tk.END,"\nNo se cumple Elemento Neutro. No pertenece.")
                         break
                 else:
-                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
-                    mostrar.insert(tk.END,"Resultado: ",resultado)
-                    mostrar.insert(tk.END,"Fin del programa.")
+                    mostrar.insert(tk.END,"\nLa expresión ingresada (",expresion,") \nNO cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"\nResultado: ",resultado)
+                    mostrar.insert(tk.END,"\nFin del programa.")
                     break
             except NameError:
-                mostrar.insert(tk.END,"Expresión ingresada no es válida, intente nuevamente.")
+                mostrar.insert(tk.END,"\nExpresión ingresada no es válida, intente nuevamente.")
 
 def bloquearVentanas():
 	textArea1.config(state=DISABLED)
@@ -660,11 +657,11 @@ def arranca2():
 			try:
 				expresion = str(textArea1.get())
 				expr2 = segunda_expr()
-				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				mostrar.insert(tk.END, "\nLa segunda expresión es: ",expr2)
 				resultado2 = eval(expr2)
 				if (isinstance(resultado2, int)):
-					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
-					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					mostrar.insert(tk.END, "\nLa segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "\nComprobando MONOIDE ASOCIATIVO. . .")
 					m = 0
 					if (monoideC(expr2) == 1):
 						m+=1
@@ -678,16 +675,16 @@ def arranca2():
 						mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
 					else:
 						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-					mostrar.insert(tk.END, "Fin del programa.")
+					mostrar.insert(tk.END, "\nFin del programa.")
 					bloquearVentanas()
 					break
 				else:
-					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END,"\nLa expresión ingresada no cumple con la Ley de Composición Interna")
 					bloquearVentanas()
 					break
 			except NameError:
-				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor inténtelo nuevamente.")
-				print("Valor ingresado no es válido. Por favor, intente de nuevo.")
+				mostrar.insert(tk.END,"\nValor ingresado no es válido. Por favor inténtelo nuevamente.")
+				print("\nValor ingresado no es válido. Por favor, intente de nuevo.")
 				break
 
 	#Números naturales
@@ -696,11 +693,11 @@ def arranca2():
 			try:
 				expresion = str(textArea1.get())
 				expr2 = segunda_expr()
-				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				mostrar.insert(tk.END, "\nLa segunda expresión es: ",expr2)
 				resultado2 = eval(expr2)
 				if (isinstance(resultado2, int) and (resultado2 >= 0)):
-					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
-					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					mostrar.insert(tk.END, "\nLa segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "\nComprobando MONOIDE ASOCIATIVO. . .")
 					m = 0
 					if (monoideC(expr2) == 1):
 						m+=1
@@ -714,16 +711,16 @@ def arranca2():
 						mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
 					else:
 						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-					mostrar.insert(tk.END, "Fin del programa.")
+					mostrar.insert(tk.END, "\nFin del programa.")
 					bloquearVentanas()
 					break
 				else:
-					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END,"\nLa expresión ingresada no cumple con la Ley de Composición Interna")
 					bloquearVentanas()
 					break
 			except NameError:
-				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor, inténtelo nuevamente.")
-				print("Valor ingresado no es válido. Por favor inténtelo nuevamente.")
+				mostrar.insert(tk.END,"\nValor ingresado no es válido. Por favor, inténtelo nuevamente.")
+				print("\nValor ingresado no es válido. Por favor inténtelo nuevamente.")
 				break
 
 	#Tomando números reales
@@ -732,15 +729,15 @@ def arranca2():
 			try:
 				expresion = str(textArea1.get())
 				expr2 = segunda_expr()
-				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				mostrar.insert(tk.END, "\nLa segunda expresión es: ",expr2)
 				resultado2 = eval(expr2)
 				if (isinstance(resultado2, complex)):
-					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END,"\nLa expresión ingresada no cumple con la Ley de Composición Interna")
 					bloquearVentanas()
 					break
 				else:
-					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
-					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					mostrar.insert(tk.END, "\nLa segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "\nComprobando MONOIDE ASOCIATIVO. . .")
 					m = 0
 					if (monoideC(expr2) == 1):
 						m+=1
@@ -754,12 +751,12 @@ def arranca2():
 						mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
 					else:
 						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-					mostrar.insert(tk.END, "Fin del programa.")
+					mostrar.insert(tk.END, "\nFin del programa.")
 					bloquearVentanas()
 					break
 			except NameError:
-				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor, inténtelo nuevamente.")
-				print("Valor ingresado no es válido. Por favor inténtelo nuevamente.")
+				mostrar.insert(tk.END,"\nValor ingresado no es válido. Por favor, inténtelo nuevamente.")
+				print("\nValor ingresado no es válido. Por favor inténtelo nuevamente.")
 				break
 
 	#Tomando números complejos
@@ -769,11 +766,11 @@ def arranca2():
 			try:
 				expresion = str(textArea1.get())
 				expr2 = segunda_expr()
-				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				mostrar.insert(tk.END, "\nLa segunda expresión es: ",expr2)
 				resultado2 = eval(expr2)
 				if (isinstance(resultado2, complex)):
-					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
-					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					mostrar.insert(tk.END, "\nLa segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "\nComprobando MONOIDE ASOCIATIVO. . .")
 					m = 0
 					if (monoideC(expr2) == 1):
 						m+=1
@@ -791,12 +788,12 @@ def arranca2():
 					bloquearVentanas()
 					break
 				else:
-					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END,"\nLa expresión ingresada no cumple con la Ley de Composición Interna")
 					bloquearVentanas()
 					break
 			except NameError:
-				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor inténtelo nuevamente.")
-				print("Valor ingresado no es válido. Por favor, intente de nuevo.")
+				mostrar.insert(tk.END,"\nValor ingresado no es válido. Por favor inténtelo nuevamente.")
+				print("\nValor ingresado no es válido. Por favor, intente de nuevo.")
 				break
 
 '''</CODIGO>'''
