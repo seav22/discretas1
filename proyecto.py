@@ -62,7 +62,7 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,"Queda claro que la sigiente expresión:\n  (",e,")")
+		#mostrar.insert(tk.END,"Queda claro que la sigiente expresión:\n  (",e,")")
 		mostrar.insert(tk.END,"\nSI CUMPLE, \nse trata de un monoide asociativo")
 		return "1"
 
@@ -71,7 +71,7 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END)
-		mostrar.insert(tk.END,"Ha sido demostrado que\n la siquiente expresión: (",e,")")
+		#mostrar.insert(tk.END,"Ha sido demostrado que\n la siquiente expresión: (",e,")")
 		mostrar.insert(tk.END,"\nNO CUMPLE, \nNO ES monoide asociativo ")
 
 def monoideB(e):
@@ -125,7 +125,7 @@ def monoideB(e):
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,)
-		mostrar.insert(tk.END,"\nSe demuestra que la siguiente ecuacion (",e,")\n")
+		#mostrar.insert(tk.END,"\nSe demuestra que la siguiente ecuacion (",e,")\n")
 		mostrar.insert(tk.END,"\nNO CUMPLE, \nNO SE TRATA DE UN monoide asociativo \n")
 		mostrar.insert(tk.END,resultado," = ",resultado2)
 
@@ -152,7 +152,7 @@ def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	resultado2 = eval(res2)
 
 	mostrar.insert(tk.END, "\nProcedimiento: \n")
-	mostrar.insert(tk.END, "\nTenemos que: [",e," = a * b ]\n")
+	#mostrar.insert(tk.END, "\nTenemos que: [",e," = a * b ]\n")
 	mostrar.insert(tk.END, "\nAplicamos la propiedad asociativa: \n")
 	mostrar.insert(tk.END, "\nEn la propiedad asociativa: (a * b) * c = a * (a * c) \n")
 	mostrar.insert(tk.END, "\nSe demuestra:\n")
@@ -169,14 +169,14 @@ def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo 
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,"\nQueda claro que la sigiente expresión:  (",e,")\n")
+		#mostrar.insert(tk.END,"\nQueda claro que la sigiente expresión:  (",e,")\n")
 		mostrar.insert(tk.END,"\nSI CUMPLE, se trata de un monoide asociativo\n")
 		return 1
 	else:
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,"Ha sido demostrado que la \nsiquiente expresión: (",e,")")
+		#mostrar.insert(tk.END,"Ha sido demostrado que la \nsiquiente expresión: (",e,")")
 		mostrar.insert(tk.END,"NO CUMPLE, NO ES monoide \nasociativo ")
 
 def monoideD(e):
@@ -202,7 +202,7 @@ def monoideD(e):
 	#2*(2*a - b) - c  =  2*a - (2*b - c)
 
 	mostrar.insert(tk.END,"\nMuestra del procedimiento: \n")
-	mostrar.insert(tk.END,"\nTenemos: [",e," = a + b ]")
+	#mostrar.insert(tk.END,"\nTenemos: [",e," = a + b ]")
 	mostrar.insert(tk.END,"\nAplicamos la propiedad asociativa. . . \n")
 	mostrar.insert(tk.END,"\n(a + b) + c = a + (a + c) \n")
 	mostrar.insert(tk.END,"\nSe demuestra la propiedad: \n")
@@ -249,7 +249,7 @@ def neutro(e): # elemento neutro
 			mostrar.insert(tk.END,"\nae = 0\n")
 			mostrar.insert(tk.END,"\ne = 0/a\n")
 			mostrar.insert(tk.END,"\nPropiedad:\n")
-			mostrar.insert(tk.END,"\n(",e,") + " ,neutro2," = ")
+			#mostrar.insert(tk.END,"\n(",e,") + " ,neutro2," = ")
 			mostrar.insert(tk.END,"\nEntones, la igualdad es. . . \n")
 			mostrar.insert(tk.END,"\nEl valor de la expresión ingresada es: \n",res2)
 			res = res2 + neutro
@@ -267,17 +267,17 @@ def neutro(e): # elemento neutro
 			neutro = 1
 			neutro2 = 'e'
 			mostrar.insert(tk.END,"\nAplicando Elemento Neutro. . .\n")
-			mostrar.insert(tk.END,"(",e,") * ",neutro2,"\n")
+			#mostrar.insert(tk.END,"(",e,") * ",neutro2,"\n")
 			res = res2 * neutro
 			mostrar.insert(tk.END,"\nEntonces, la igualdad es: ")
 			if (res == res2):
 				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-				mostrar.insert(tk.END,e, "*", neutro2)
+				#mostrar.insert(tk.END,e, "*", neutro2)
 				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-				mostrar.insert(tk.END,"\nLa expresión (",e,") SI posee Elemento Neutro \nen la MULTIPLICACIÓN (a * b)")
+				mostrar.insert(tk.END,"\nLa expresión SI posee Elemento Neutro \nen la MULTIPLICACIÓN (a * b)")
 				return 1
 			else:
-				mostrar.insert(tk.END,"\nLa expresión (",e,") NO posee Elemento Neutro \nen MULTIPLICACIÓN (a * b)")
+				mostrar.insert(tk.END,"\nLa expresión NO posee Elemento Neutro \nen MULTIPLICACIÓN (a * b)")
 				return 0
 
 # Elemento inverso
@@ -310,7 +310,7 @@ def inverso(e):
 		return 1
 		# retornando 1 para la comprobacion de grupo abeliano
 	else:
-		mostrar.insert(tk.END,"\nLa expresión (",e,") NO tiene Elemento Inverso ADITIVO ó MULTIPLICATIVO \n[",Inver,"] o [",Inver2,"]")
+		mostrar.insert(tk.END,"\nLa expresión NO tiene Elemento Inverso ADITIVO ó MULTIPLICATIVO \n[",Inver,"] o [",Inver2,"]")
 		return 0
 
  # Verificando si es grupo
@@ -320,7 +320,7 @@ def conmutatividad(e): #Grupo
 	conmu = conmu.replace("l","a")
 
 	mostrar.insert(tk.END,"\nProcedimiento: \n")
-	mostrar.insert(tk.END,"\nTenemos: (",e," = b + a )\n")
+	#mostrar.insert(tk.END,"\nTenemos: (",e," = b + a )\n")
 	mostrar.insert(tk.END,"\nAplicamos la propiedad conmutativa: \n")
 	mostrar.insert(tk.END,"\nTenemos: a + b = a + b\n")
 	mostrar.insert(tk.END,"\nSe demuestra: \n")
@@ -365,15 +365,15 @@ def propiedadDistributiva(e1, e2):
 	dist2 = dist2.replace("a*b",e2)
 	dist2 = dist2.replace("a*c",elm1)
 	r2 = eval(dist2)
-	mostrar.insert(tk.END,"\nPropiedad Distributiva")
+	mostrar.insert(tk.END,"\nPropiedad Distributiva\n")
 	mostrar.insert(tk.END,dist1, "debe ser igual a ",dist2)
 
 	if (r1 == r2):
-		mostrar.insert(tk.END,"\nLa expresión es anillo.")
+		mostrar.insert(tk.END,"\nLa expresión es anillo.\n")
 		return 1
 		# retornando 1 para la comprobacion de cuerpo
 	else:
-		mostrar.insert(tk.END,"La expresión no es anillo.")
+		mostrar.insert(tk.END,"\nLa expresión no es anillo.\n")
 
 # Comprobación de números reales.
 def reales(e):
@@ -440,11 +440,11 @@ def arranca():
                             break #Fin del ciclo
 
                         else:
-                            mostrar.insert(tk.END,"\nNo se cumple el Elemento Inverso. No pertenece. Fin del programa.")
+                            mostrar.insert(tk.END,"\nNo se cumple el Elemento Inverso. No pertenece.")
                             messagebox.showinfo(message="\nNo se habilitara la entrada de la segunda operacion.\n Esto debido a que no hay elemento inverso", title="Aviso")
                             break
                     else:
-                        mostrar.insert(tk.END,"\nNo se cumple el Elemento Neutro. No pertenece. Fin del programa")
+                        mostrar.insert(tk.END,"\nNo se cumple el Elemento Neutro. No pertenece.")
                         break
                         
                 else:
@@ -504,10 +504,10 @@ def arranca():
                             #else:
                               #  mostrar.insert(tk.END,"La segunda expresión NO cumple con la Ley de Composición Interna")
                         else:
-                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece.")
                             break
                     else:
-                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece. Fin del programa.")
+                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece.")
                         break
                 else:
                     mostrar.insert(tk.END,"La expresión (",expresion,") no cumple con la Ley de Composición Interna.")
@@ -569,10 +569,10 @@ def arranca():
                             #else:
                              #   break
                         else:
-                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece.")
                             break
                     else:
-                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece. Fin del programa")
+                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece.")
                         break
             except NameError:
                 mostrar.insert(tk.END,"Expresión ingresada no es válida, intente nuevamente.")
@@ -621,10 +621,10 @@ def arranca():
                             #    print("\nFin del programa.")
                             #    break
                         else:
-                            mostrar.insert(tk.END,"\nNo se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            mostrar.insert(tk.END,"\nNo se cumple Elemento Inverso. No pertenece.")
                             break
                     else:
-                        mostrar.insert(tk.END,"\nNo se cumple Elemento Neutro. No pertenece. Fin del programa.")
+                        mostrar.insert(tk.END,"\nNo se cumple Elemento Neutro. No pertenece.")
                         break
                 else:
                     mostrar.insert(tk.END,"La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
