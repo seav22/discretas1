@@ -459,126 +459,136 @@ def arranca():
     elif opcion == 2:
 
         while True:
-            print("\nHa escogido trabajar con el conjunto de los números naturales. Por favor, ingrese la expresión matemática a comprobar:")
+            mostrar.insert(tk.END,"\nHa escogido trabajar con el conjunto de los números naturales. \n")
 
             try:
-                expresion = input("Ingrese la expresión: ")
+                expresion = str(textArea1.get())
                 resultado = eval(expresion)
 
                 if (resultado >= 0 and isinstance(resultado,int)):
-                    print("La expresión (",expresion,") cumple con la Ley de Composición Interna.")
-                    print("Resultado: ",resultado)
+                    mostrar.insert(tk.END,"La expresión (",expresion,") cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"Resultado: ",resultado)
                     monoideA(expresion)
                     monoideB(expresion)
 
                     if (neutro(expresion) == 1):
                         if (inverso(expresion) == 1):
-                            print("\nPertenece a grupo.")
-
-                
+                            mostrar.insert(tk.END,"\nPertenece a grupo.")
                             conmutatividad(expresion)
+                            label5.config(state=NORMAL)
+                            textArea2.config(state=NORMAL)
+                            messagebox.showinfo(message="Ya puede introducir la segunda ecuacion!\nProceda a hacerlo y presionar 'Comprobar 2'", title="Aviso")
+                            boton2.config(state=NORMAL)
+                            break
 
-                            expr2 = segunda_expr()
-                            print("La segunda expresión es: ",expr2)
-                            resultado2 = eval(expr2)
-                            if (resultado2 >= 0 and isinstance(resultado2, int)):
-                                print("La segunda expresión cumple con la Ley de Composición Interna")
-                                if (monoideC(expr2) == 1):
-                                    m+=1
-                                if (monoideD(expr2) == 1):
-                                    m+=1	
-                                if (propiedadDistributiva(expresion, expr2) == 1):
-                                    m+=1
-                                if (m == 2):
-                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-                                if (m == 3):
-                                    print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-                                else:
-                                    print("NO hay Cuerpo. No se cumple Grupo Abeliano en conjunto con Propiedad Distributiva")
-                                print("Fin del programa.")
-                                break
+                           # expr2 = segunda_expr()
+                           # print("La segunda expresión es: ",expr2)
+                           # resultado2 = eval(expr2)
+                           # if (resultado2 >= 0 and isinstance(resultado2, int)):
+                           #     mostrar.insert(tk.END,"La segunda expresión cumple con la Ley de Composición Interna")
+                           #     if (monoideC(expr2) == 1):
+                           #         m+=1
+                           #     if (monoideD(expr2) == 1):
+                           #         m+=1	
+                           #     if (propiedadDistributiva(expresion, expr2) == 1):
+                           #         m+=1
+                           #     if (m == 2):
+                           #         mostrar.insert(tk.END,"\nLa segunda expresión ingresada es SEMIGRUPO.")
+                           #     if (m == 3):
+                           #         mostrar.insert(tk.END,"Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+                           #     else:
+                           #         mostrar.insert(tk.END,"NO hay Cuerpo. No se cumple Grupo Abeliano en conjunto con Propiedad Distributiva")
+                           #     mostrar.insert("Fin del programa.")
+                                #break
 
-                            else:
-                                print("La segunda expresión NO cumple con la Ley de Composición Interna")
+                            #else:
+                              #  mostrar.insert(tk.END,"La segunda expresión NO cumple con la Ley de Composición Interna")
                         else:
-                            print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            break
                     else:
-                        print("No se cumple Elemento Neutro. No pertenece. Fin del programa.")
+                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece. Fin del programa.")
                         break
                 else:
-                    print("La expresión (",expresion,") no cumple con la Ley de Composición Interna.")
-                    print("Resultado: ",resultado)
-                    print("Fin del programa.")
+                    mostrar.insert(tk.END,"La expresión (",expresion,") no cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"Resultado: ",resultado)
+                    mostrar.insert(tk.END,"Fin del programa.")
                     break
             except NameError:
-                print("Expresión ingresada no es válida, intente nuevamente.")
+            	mostrar.insert(tk.END,"Expresión ingresada no es válida, intente nuevamente.")
+            	print("Expresión ingresada no es válida, intente nuevamente.")
+            	break
 
     #Real
     elif opcion == 3:
 
         while True:
-            print("\nHa escogido trabajar con el conjunto de los números reales. Por favor, ingrese la expresión matemática a comprobar: ")
+            mostrar.insert(tk.END,"\nHa escogido trabajar con el conjunto de los números reales. Por favor, ingrese la expresión matemática a comprobar: ")
 
             try:
-                expresion = input("Ingrese la expresión: ")
+                expresion = str(textArea1.get())
                 resultado = eval(expresion)
                 if (isinstance(resultado,complex)):
-                    print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
-                    print("Resultado: ",resultado)
+                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"Resultado: ",resultado)
                     break
                 else:
-                    print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
-                    print("Resultado: ",resultado)
+                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"Resultado: ",resultado)
                     monoideA(expresion)
                     monoideB(expresion)
                     if (neutro(expresion) == 1):
                         if (inverso(expresion) == 1):
                             conmutatividad(expresion)
+                            label5.config(state=NORMAL)
+                            textArea2.config(state=NORMAL)
+                            messagebox.showinfo(message="Ya puede introducir la segunda ecuacion!\nProceda a hacerlo y presionar 'Comprobar 2'", title="Aviso")
+                            boton2.config(state=NORMAL)
+                            break
 
-                            expr2 = segunda_expr()
-                            print("La segunda expresión es: ",expr2)
-                            resultado2 = eval(expr2)
-                            print("Resultado numérico de la segunda expresión: ",resultado2)
-                            print("Comprobando si cumple Ley de Composición Interna. . .")
-
-                            if (reales(expr2) == 1):
-                                if (monoideC(expr2) == 1):
-                                    m+=1
-                                if (monoideD(expr2)	== 1):
-                                    m+=1
-                                if (propiedadDistributiva(expresion, expr2) ==1):
-                                    m+=1
-                                if (m == 2):
-                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-                                if (m == 3):
-                                    print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-                                else:
-                                    print("\nNO hay Cuerpo. NO se cumple tanto grupo Abeliano como Propiedad Distributiva")
-                                print("\nFin del programa.")
-                                break	
-                            else:
-                                break
+                            #expr2 = segunda_expr()
+                            #mostrar.insert(tk.END,"La segunda expresión es: ",expr2)
+                            #resultado2 = eval(expr2)
+                            #mostrar.insert(tk.END,"Resultado numérico de la segunda expresión: ",resultado2)
+                            #mostrar.insert(tk.END,"Comprobando si cumple Ley de Composición Interna. . .")
+                            #if (reales(expr2) == 1):
+                            #    if (monoideC(expr2) == 1):
+                            #        m+=1
+                            #    if (monoideD(expr2)	== 1):
+                            #        m+=1
+                            #    if (propiedadDistributiva(expresion, expr2) ==1):
+                            #        m+=1
+                            #    if (m == 2):
+                            #        mostrar.insert(tk.END,"\nLa segunda expresión ingresada es SEMIGRUPO.")
+                            #    if (m == 3):
+                            #        mostrar.insert(tk.END,"\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+                            #    else:
+                            #        mostrar.insert(tk.END,"\nNO hay Cuerpo. NO se cumple tanto grupo Abeliano como Propiedad Distributiva")
+                            #    mostrar.insert(tk.END,"\nFin del programa.")
+                            #    break	
+                            #else:
+                             #   break
                         else:
-                            print("No se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            mostrar.insert(tk.END,"No se cumple Elemento Inverso. No pertenece. Fin del programa.")
                             break
                     else:
-                        print("No se cumple Elemento Neutro. No pertenece. Fin del programa")
+                        mostrar.insert(tk.END,"No se cumple Elemento Neutro. No pertenece. Fin del programa")
                         break
             except NameError:
-                print("Expresión ingresada no es válida, intente nuevamente.")
+                mostrar.insert(tk.END,"Expresión ingresada no es válida, intente nuevamente.")
 
     #Complejos
     elif opcion == 4:
 
         while True:
-            print("\nHa escogido trabajar con el conunto de los números complejos. Por favor, ingrese la expresión matemática a comprobar")
+            mostrar.insert(tk.END,"\nHa escogido trabajar con el conunto de los números complejos. Por favor, ingrese la expresión matemática a comprobar")
 
             try:
-                expresion = input("Ingrese la expresión: ")
+                expresion = str(textArea1.get())
                 resultado = eval(expresion)
                 if (isinstance(resultado, complex)):
-                    print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
-                    print("Resultado: ",resultado)
+                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"Resultado: ",resultado)
 
                     monoideA(expresion)
                     monoideB(expresion)
@@ -586,38 +596,43 @@ def arranca():
                     if (neutro(expresion) == 1):
                         if (inverso(expresion) == 1):
                             conmutatividad(expresion)
-                            expr2 = segunda_expr()
-                            print("La segunda expresión es: ",expr2)
-                            resultado2 = eval(expr2)
-                            if (isinstance(resultado2, complex)):
-                                print("La segunda expresión cumple con la Ley de Composición Interna")
-                                if (monoideC(expr2) == 1):
-                                    m+=1
-                                if (monoideD(expr2) == 1):
-                                    m+=1	
-                                if (propiedadDistributiva(expresion, expr2) == 1):
-                                    m+=1
-                                if (m == 2):
-                                    print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-                                if (m == 3):
-                                    print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
-                                else:
-                                    print("\nNO hay Cuerpo. NO se cumple el Grupo Abeliano con la Propiedad Distributiva")
-                                print("\nFin del programa.")
-                                break
+                            label5.config(state=NORMAL)
+                            textArea2.config(state=NORMAL)
+                            messagebox.showinfo(message="Ya puede introducir la segunda ecuacion!\nProceda a hacerlo y presionar 'Comprobar 2'", title="Aviso")
+                            boton2.config(state=NORMAL)
+                            break
+                            #expr2 = segunda_expr()
+                            #print("La segunda expresión es: ",expr2)
+                            #resultado2 = eval(expr2)
+                            #if (isinstance(resultado2, complex)):
+                            #    print("La segunda expresión cumple con la Ley de Composición Interna")
+                            #    if (monoideC(expr2) == 1):
+                            #        m+=1
+                            #    if (monoideD(expr2) == 1):
+                            #        m+=1	
+                            #    if (propiedadDistributiva(expresion, expr2) == 1):
+                            #        m+=1
+                            #    if (m == 2):
+                            #        print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+                            #    if (m == 3):
+                            #        print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
+                            #    else:
+                            #        print("\nNO hay Cuerpo. NO se cumple el Grupo Abeliano con la Propiedad Distributiva")
+                            #    print("\nFin del programa.")
+                            #    break
                         else:
-                            print("\nNo se cumple Elemento Inverso. No pertenece. Fin del programa.")
+                            mostrar.insert(tk.END,"\nNo se cumple Elemento Inverso. No pertenece. Fin del programa.")
                             break
                     else:
-                        print("\nNo se cumple Elemento Neutro. No pertenece. Fin del programa.")
+                        mostrar.insert(tk.END,"\nNo se cumple Elemento Neutro. No pertenece. Fin del programa.")
                         break
                 else:
-                    print("La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
-                    print("Resultado: ",resultado)
-                    print("Fin del programa.")
+                    mostrar.insert(tk.END,"La expresión ingresada (",expresion,") NO cumple con la Ley de Composición Interna.")
+                    mostrar.insert(tk.END,"Resultado: ",resultado)
+                    mostrar.insert(tk.END,"Fin del programa.")
                     break
             except NameError:
-                print("Expresión ingresada no es válida, intente nuevamente.")
+                mostrar.insert(tk.END,"Expresión ingresada no es válida, intente nuevamente.")
 
 def bloquearVentanas():
 	textArea1.config(state=DISABLED)
@@ -680,6 +695,116 @@ def arranca2():
 					break
 				else:
 					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					bloquearVentanas()
+					break
+			except NameError:
+				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor inténtelo nuevamente.")
+				print("Valor ingresado no es válido. Por favor, intente de nuevo.")
+				break
+
+	#Números naturales
+	if opcion == 2:
+		while True:
+			try:
+				expresion = str(textArea1.get())
+				expr2 = segunda_expr()
+				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				resultado2 = eval(expr2)
+				if (isinstance(resultado2, int) and (resultado2 >= 0)):
+					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					m = 0
+					if (monoideC(expr2) == 1):
+						m+=1
+					if (monoideD(expr2) == 1):
+						m+=1	
+					if (propiedadDistributiva(expresion, expr2) == 1):
+						m+=1
+					if (m == 2):
+						mostrar.insert(tk.END, "\nLa segunda expresión ingresada es SEMIGRUPO.")
+					if    (m ==3 ):
+						mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+					else:
+						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+					mostrar.insert(tk.END, "Fin del programa.")
+					bloquearVentanas()
+					break
+				else:
+					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					bloquearVentanas()
+					break
+			except NameError:
+				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor, inténtelo nuevamente.")
+				print("Valor ingresado no es válido. Por favor inténtelo nuevamente.")
+				break
+
+	#Tomando números reales
+	if opcion == 3:
+		while True:
+			try:
+				expresion = str(textArea1.get())
+				expr2 = segunda_expr()
+				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				resultado2 = eval(expr2)
+				if (isinstance(resultado2, complex)):
+					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					bloquearVentanas()
+					break
+				else:
+					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					m = 0
+					if (monoideC(expr2) == 1):
+						m+=1
+					if (monoideD(expr2) == 1):
+						m+=1	
+					if (propiedadDistributiva(expresion, expr2) == 1):
+						m+=1
+					if (m == 2):
+						mostrar.insert(tk.END, "\nLa segunda expresión ingresada es SEMIGRUPO.")
+					if    (m ==3 ):
+						mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+					else:
+						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+					mostrar.insert(tk.END, "Fin del programa.")
+					bloquearVentanas()
+					break
+			except NameError:
+				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor, inténtelo nuevamente.")
+				print("Valor ingresado no es válido. Por favor inténtelo nuevamente.")
+				break
+
+	#Tomando números complejos
+	if opcion == 4:
+		while True:
+
+			try:
+				expresion = str(textArea1.get())
+				expr2 = segunda_expr()
+				mostrar.insert(tk.END, "La segunda expresión es: ",expr2)
+				resultado2 = eval(expr2)
+				if (isinstance(resultado2, complex)):
+					mostrar.insert(tk.END, "La segunda expresión cumple con la Ley de Composición Interna")
+					mostrar.insert(tk.END, "Comprobando MONOIDE ASOCIATIVO. . .")
+					m = 0
+					if (monoideC(expr2) == 1):
+						m+=1
+					if (monoideD(expr2) == 1):
+						m+=1	
+					if (propiedadDistributiva(expresion, expr2) == 1):
+						m+=1
+					if (m == 2):
+						mostrar.insert(tk.END, "\nLa segunda expresión ingresada es SEMIGRUPO.")
+					if    (m ==3 ):
+						mostrar.insert(tk.END, "\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
+					else:
+						mostrar.insert(tk.END, "\nNO hay CUERPO. No se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+					mostrar.insert(tk.END, "Fin del programa.")
+					bloquearVentanas()
+					break
+				else:
+					mostrar.insert(tk.END,"La expresión ingresada no cumple con la Ley de Composición Interna")
+					bloquearVentanas()
 					break
 			except NameError:
 				mostrar.insert(tk.END,"Valor ingresado no es válido. Por favor inténtelo nuevamente.")
