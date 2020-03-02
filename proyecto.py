@@ -632,7 +632,19 @@ def bloquearVentanas():
 	messagebox.showinfo(message="Fin del programa.\n Si desea reutilizarlo debe reiniciar la aplicacion", title="Aviso")
 
 def reset():
-	print(" ")
+	textArea1.config(state=NORMAL)
+	textArea2.config(state=NORMAL)
+	mostrar.config(state=NORMAL)
+	boton1.config(state=NORMAL)
+	boton2.config(state=NORMAL)
+	radio1.config(state=NORMAL)
+	radio2.config(state=NORMAL)
+	radio3.config(state=NORMAL)
+	radio4.config(state=NORMAL)
+	textArea1.delete(0, "end")
+	textArea2.delete(0, "end")
+	mostrar.delete(1.0, END)
+	messagebox.showinfo(message="Se reinicio el programa, proceda a utilizarlo de nuevo", title="Aviso")
 
 
 def arranca2():
