@@ -15,8 +15,8 @@ from math import sqrt
 
 '''<CODIGO>'''
 
-a = 10
-b = 4
+a = 3
+b = 10
 c = 7
 mon = a+b
 mon1 = a*b
