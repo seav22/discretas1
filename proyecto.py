@@ -45,7 +45,7 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	resultado2 = eval(res2)
 
 	mostrar.insert(tk.END,"Procedimiento: \n")
-	mostrar.insert(tk.END,"\nTenemos que: \n[",e," = a * b ]")
+	#mostrar.insert(tk.END,"\nTenemos que: \n[",e," = a * b ]")
 	mostrar.insert(tk.END,"Aplicamos la propiedad asociativa: ")
 	mostrar.insert(tk.END,"En la propiedad asociativa:\n\n (a * b) * c = a * (a * c) \n")
 	mostrar.insert(tk.END,"\nSe demuestra:")
@@ -97,7 +97,7 @@ def monoideB(e):
 	#2*(2*a - b) - c  =  2*a - (2*b - c)
 
 	mostrar.insert(tk.END,"\nMuestra del procedimiento: \n")
-	mostrar.insert(tk.END,"\nTenemos: [",e," = a + b ]")
+	#mostrar.insert(tk.END,"\nTenemos: [",e," = a + b ]")
 	mostrar.insert(tk.END,"Aplicamos la \npropiedad asociativa. . . ")
 	mostrar.insert(tk.END,"\n(a + b) + c = a + (a + c) \n")
 	mostrar.insert(tk.END,"\nSe demuestra la propiedad: \n")
@@ -114,7 +114,7 @@ def monoideB(e):
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,result2, " = ", res2)
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,"\nSe demuestra que la siguiente expresión (",e,")\n")
+		#mostrar.insert(tk.END,"\nSe demuestra que la siguiente expresión (",e,")\n")
 		mostrar.insert(tk.END,"\nSI CUMPLE, ES UN monoide asociativo \n")
 		mostrar.insert(tk.END,"\nResultado numérico: \n")
 		mostrar.insert(tk.END,resultado," = ",resultado2)
@@ -257,10 +257,10 @@ def neutro(e): # elemento neutro
 				mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 				mostrar.insert(tk.END,e, "+", neutro2)
 				mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-				mostrar.insert(tk.END,"\nExpresión (",e,") posee Elemento Neutro en la Adición (a + b)\n")
+				mostrar.insert(tk.END,"\nExpresión posee Elemento Neutro en la Adición (a + b)\n")
 				return 1
 			else:
-				mostrar.insert(tk.END,"\nExpresión (",e,") no posee Elemento Neutro en la Adición (a + b)\n")
+				mostrar.insert(tk.END,"\nExpresión no posee Elemento Neutro en la Adición (a + b)\n")
 				return 0
 		elif (i == "*"):
 			res2 = eval(e)
@@ -305,8 +305,8 @@ def inverso(e):
 		mostrar.insert(tk.END,e, "+", Inver, "ADITIVO")
 		mostrar.insert(tk.END,e, "+", Inver2, "MULTIPLICATIVO")
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,"\nLa expresión (",e,") SI tiene Elemento Inverso ADITIVO [",Inver,"]\n")
-		mostrar.insert(tk.END,"\nLa expresión (",e,") SI tiene Elemento Inverso MULTIPLICATIVO [",Inver2,"]\n")
+		mostrar.insert(tk.END,"\nLa expresión SI tiene Elemento Inverso ADITIVO [",Inver,"]\n")
+		mostrar.insert(tk.END,"\nLa expresión SI tiene Elemento Inverso MULTIPLICATIVO [",Inver2,"]\n")
 		return 1
 		# retornando 1 para la comprobacion de grupo abeliano
 	else:
@@ -328,13 +328,13 @@ def conmutatividad(e): #Grupo
 	if (eval(e) == eval(conmu)):
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,"≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,"La siquiente expresión (",e,")\n")
+		#mostrar.insert(tk.END,"La siquiente expresión (",e,")\n")
 		mostrar.insert(tk.END,"\nSI CUMPLE con la Propiedad Conmutativa.\n")
 		mostrar.insert(tk.END,"\nSI es un Grupo Abeliano.\n")
 	else:
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 		mostrar.insert(tk.END,"\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
-		mostrar.insert(tk.END,"\nSe de muestra que la siquiente ecueacion (",e,")")
+		#mostrar.insert(tk.END,"\nSe de muestra que la siquiente ecueacion (",e,")")
 		mostrar.insert(tk.END,"\nNO CUMPLE con la Propiedad Conmutativa.")
 		mostrar.insert(tk.END,"\nNO es un Grupo Abeliano.")
 # Obteniendo valor de la segunda expresión 
@@ -382,10 +382,10 @@ def reales(e):
 
 	#Comprobando si es real
 	if (isinstance(numerico, complex)):
-		mostrar.insert(tk.END,"No cumple la Ley de Composición Interna. NO es un número real.")
+		mostrar.insert(tk.END,"\nNo cumple la Ley de Composición Interna. NO es un número real.")
 		return 0
 	else:
-		mostrar.insert(tk.END,"Cumple con la Ley de Composición Interna. Es un número real.")
+		mostrar.insert(tk.END,"\nCumple con la Ley de Composición Interna. Es un número real.")
 		return 1
 
 ## MODIFICAR LOS PRINT EN ARRANCA POR MOSTRAR.INSERT
